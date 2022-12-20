@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="container">
+    <p class="diplay-1">
+        <!--Nous concevons des modules intelligents, performants <br> pour des ecommerçants ambitieux-->
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, at dignissimos enim expedita explicabo fugiat impedit in inventore libero minima, modi non placeat repellat. Asperiores cumque id officiis perspiciatis ullam?
+    </p>
+</div>
+
+{{ range .Pages }}
+
+<a href="{{ .Permalink }}">{{ .Title }}</a><br>
+
+{{ end }}
+{{ end }}

@@ -1,0 +1,60 @@
+
+$black:         #000000;
+$darkergray:    #262626;
+$darkgray:      #666666;
+$gray:          #B1B1B1;
+$lightgray:     #D9D9D9;
+$lightergray:   #F3F3F3;
+$white:         #ffffff;
+
+$biface:        #FF9966;
+$bifacelight:   #958450;
+$bifacelighter: #F5EDD6;
+$bifacedark:    #B8952E;
+$bifacedarker:  #916F08;
+
+
+$red:           #A6593F;
+$orange:        #B8732E;
+
+$brand-primary:   #FF5600;
+$brand-secondary: #D4FD50;
+$brand-secondary-darkest:      #212C21;
+$brand-secondary-darker:       #353E30;
+
+
+$light-beige:    #E7DDBC;
+
+
+@font-face {
+  font-family: 'CabinetGrotesk-Variable';
+  src: url('../fonts/cabinetgrotesk/CabinetGrotesk-Variable.woff2') format('woff2'),
+       url('../fonts/cabinetgrotesk/CabinetGrotesk-Variable.woff') format('woff'),
+       url('../fonts/cabinetgrotesk/CabinetGrotesk-Variable.ttf') format('truetype');
+       font-weight: 100 900;
+       font-display: swap;
+       font-style: normal;
+}
+
+@font-face {
+  font-family: 'MaziusReviewRegular';
+  src: url('../fonts/mazius/MAZIUSREVIEW20.09-Regular.woff2') format('woff2'),
+       url('../fonts/mazius/MAZIUSREVIEW20.09-Regular.woff') format('woff'),
+       url('../fonts/mazius/CabinetGrotesk-Variable.ttf') format('truetype');
+       font-weight: 100 900;
+       font-display: swap;
+       font-style: normal;
+}
+
+
+// scss-docs-start container-max-widths
+$container-max-widths: (
+  sm: 640px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+) ;
+// scss-docs-end container-max-widths
+
+@include _assert-ascending($container-max-widths, "$container-max-widths");

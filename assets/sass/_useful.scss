@@ -1,0 +1,125 @@
+.text-black         { color:$black; }
+.text-darkergray    { color:$darkergray;}
+.text-darkgray      { color:$darkgray;}
+.text-gray          { color:$gray;}
+.text-lightgray     { color:$lightgray;}
+.text-lightergray   { color:$lightergray;}
+.text-biface        { color:$biface;
+    &::selection{
+        background-color: $biface;
+        opacity: 1;
+        color: $black;
+      }}
+.text-bifacelight   { color:$bifacelight;}
+.text-bifacelighter { color:$bifacelighter;}
+.text-bifacedark    { color:$bifacedark;}
+.text-bifacedarker  { color:$bifacedarker;}
+.text-transparent   { color:inherit; -webkit-text-stroke: inherit;}
+
+.text-red  { color:$red;}
+.text-brand-primary  { color:$brand-primary;}
+.text-brand-secondary-darker {color:$brand-secondary-darker}
+
+.translate--4 { transform: translateY(-4 * $spacer); }
+
+.bg-biface          { background-color:$biface;}
+.bg-bifacelight     { background-color:$bifacelight;}
+.bg-bifacelighter   { background-color:$bifacelighter;}
+.bg-bifacedark      { background-color:$bifacedark;}
+.bg-bifacedarker    { background-color:$bifacedarker;}
+
+.font-sans-serif   { font-family: $font-family-sans-serif; }
+
+.translate--y-md {
+    transform: translateY(-3 * $spacer);
+}
+
+.sticky-0 { position: -webkit-sticky; position: sticky; top:0; }
+
+.supersize-xxl{ 
+    font-family: 'MangoGrotesque', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 6em;
+    line-height: 1em;
+    @media (min-width: 768px) {
+      font-size: 9em;
+      }
+      @media (min-width: 992px) {
+      font-size: 11.75em;
+      }
+  }
+  
+
+.supersize-xl{ 
+    font-size: 15vw;
+    letter-spacing: -0.1rem;
+    line-height: 1em;
+      @media (min-width: 768px) {
+    font-size: 12vw;
+        letter-spacing: -0.2rem;      }
+      @media (min-width: 992px) {
+    font-size: 11vw;
+        letter-spacing: -0.25rem;      }
+  }
+  
+  .supersize-lg{ 
+    font-family: 'MangoGrotesque', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 4.4em;
+    line-height: 1em;
+    @media (min-width: 768px) {
+      font-size: 6em;
+      }
+      @media (min-width: 992px) {
+      font-size: 8em;
+      }
+  }
+  
+  .supersize-md{ 
+    font-family: 'MangoGrotesque', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 3.5em;
+    line-height: 1em;
+    @media (min-width: 768px) {
+      font-size: 4.5em;
+      }
+      @media (min-width: 992px) {
+      font-size: 5.5em;
+      }
+  }
+  
+  .supersize-sm{ 
+    font-family: 'MangoGrotesque', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 3em;
+    line-height: 1em;
+    @media (min-width: 768px) {
+      font-size: 3.5em;
+      }
+      @media (min-width: 992px) {
+      font-size: 4em;
+      }
+  }
+  
+  .supersize-xs{ 
+    font-family: 'MangoGrotesque', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 3em;
+    line-height: 1em;
+    @media only screen and (max-width: 769px) {
+          font-size: 3em;
+      }
+  }
+
+.opacity-64{
+      opacity: 0.64;
+  }
+
+  .rounded-1em{
+      border-radius: 1em;
+  }

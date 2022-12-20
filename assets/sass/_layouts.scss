@@ -1,0 +1,131 @@
+body {
+	background: $brand-secondary-darkest;
+}
+
+.section {
+	padding-bottom: 2 * $spacer;
+	padding-top: 2 * $spacer;
+	@media (min-width: 768px) {
+		padding-bottom: 4 * $spacer;
+		padding-top: 4 * $spacer;
+	}
+	@media (min-width: 992px) {
+		padding-bottom: 5 * $spacer;
+		padding-top: 5 * $spacer;
+	}
+}
+.section-bspacer {
+	padding-bottom: 3 * $spacer;
+	@media (min-width: 768px) {
+		padding-bottom: 5 * $spacer;
+	}
+	@media (min-width: 992px) {
+		padding-bottom: 6 * $spacer;
+	}
+}
+
+.section-tspacer {
+	padding-top: 3 * $spacer;
+	@media (min-width: 768px) {
+		padding-top: 5 * $spacer;
+	}
+	@media (min-width: 992px) {
+		padding-top: 6 * $spacer;
+	}
+}
+
+.home-service {
+	padding-left: 3em;
+	&:before {
+		display: block;
+		content: "";
+		height: 0.25em;
+		width: 2em;
+		background-color: $biface;
+		top: 1em;
+		left: 1em;
+		position: absolute;
+	}
+}
+
+.home-hero {
+	display: block;
+	width: 100%;
+	margin: 3em auto 1em;
+	@media (min-width: 768px) {
+		margin: 4em auto 2em;
+	}
+	@media (min-width: 992px) {
+		margin: 6em auto 2em;
+	}
+}
+
+.bg-light-beige{
+	background-color: $light-beige;
+}
+
+.bg-secondary-darker{
+	background-color: $brand-secondary-darker;
+}
+
+.text-slider {
+	position: relative;
+	display: block;
+	width: 100%;
+	white-space: nowrap;
+	height: 50vw;
+	@media (min-width: 768px) {
+		height: 40vw;
+	}
+	@media (min-width: 992px) {
+		height: 35vw;
+	}
+}
+
+.text-slider__inner {
+	position: absolute;
+	top: 0;
+	color: $lightgray;
+	-webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: $lightgray;
+	line-height: 2;
+	font-size: 25vw;
+	@media (min-width: 768px) {
+		font-size: 20vw;
+	}
+	@media (min-width: 992px) {
+		font-size: 15vw;
+	}
+}
+
+.text-slider.animated .text-slider__anim {
+	height: 2em;
+	-webkit-animation: text-slider 30s linear infinite backwards;
+	animation: text-slider 30s linear infinite backwards;
+	will-change: text-indent;
+		// &:hover, &:focus {
+		// animation-play-state: paused;
+		// cursor: crosshair;
+	// }
+}
+
+@-webkit-keyframes text-slider {
+	0% {
+		text-indent: 0;
+	}
+
+	100% {
+		text-indent: -75%;
+	}
+}
+
+@keyframes text-slider {
+	0% {
+		text-indent: 0;
+	}
+
+	100% {
+		text-indent: -75%;
+	}
+}
