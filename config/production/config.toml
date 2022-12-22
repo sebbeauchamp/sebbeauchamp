@@ -1,6 +1,6 @@
 canonifyURLs = false
 
-baseurl = "https://sebastienbeauchamp.com/"
+baseurl = ""
 languageCode = "fr"
 DefaultContentLanguage = "fr"
 title = "Sébastien Beauchamp"
