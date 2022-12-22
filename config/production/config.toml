@@ -1,9 +1,9 @@
 canonifyURLs = false
 
-baseurl = "https://biface.co/"
+baseurl = "https://sebastienbeauchamp.com/"
 languageCode = "fr"
 DefaultContentLanguage = "fr"
-title = "Biface"
+title = "Sébastien Beauchamp"
 theme = "sbdesigner"
 disableLanguages = ["en"]
 
@@ -15,8 +15,8 @@ disableKinds = ["taxonomyTerm"]
 
 [languages]
   [languages.fr]
-    title = "Biface"
-    subtitle = "Design et contenus numériques "
-    description="On s’adapte à votre univers et à vos objectifs pour concevoir des outils fonctionnels et impactants."
+    title = "Sébastien Beauchamp"
+    subtitle = "Expériences numériques & identité de marque"
+    description="Je crois que les marques et les projets qui construisent une expérience intuitive, agréable et empathique réussissent à se démarquer."
     weight = 1
     languageName = "Fr"
