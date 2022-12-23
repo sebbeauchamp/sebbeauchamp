@@ -7,12 +7,6 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- <link rel="preload" as="font">
-    <link rel="preconnect" href="https://www.google-analytics.com"> -->
-
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  -->
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 
@@ -25,15 +19,15 @@
     <meta property="og:url" content="{{ $.Permalink }}">
     <meta property="og:title" content="{{if .IsHome}}{{ $.Site.Params.title }} - {{$.Site.Params.subtitle}}{{else}}{{.Title}} - {{ $.Site.Params.title }}{{end}}">
     <meta property="og:description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}">
-    <meta property="og:image" content="{{ $.Site.BaseURL }}images/share-biface.jpg">
-    <meta property="og:image:secure_url" content="{{ $.Site.BaseURL }}images/share-biface.jpg">
+    <meta property="og:image" content="{{ $.Site.BaseURL }}/android-chrome-512x512.png">
+    <meta property="og:image:secure_url" content="{{ $.Site.BaseURL }}/android-chrome-512x512.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ $.Permalink }}">
     <meta property="twitter:title" content="{{if .IsHome}}{{ $.Site.Params.title }} - {{$.Site.Params.subtitle}}{{else}}{{.Title}} - {{ $.Site.Params.title }}{{end}}">
     <meta property="twitter:description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}">
-    <meta property="twitter:image" content="{{ $.Site.BaseURL }}images/share-biface.jpg">
+    <meta property="twitter:image" content="{{ $.Site.BaseURL }}/android-chrome-512x512.png">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
