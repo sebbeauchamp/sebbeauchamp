@@ -1,0 +1,12 @@
+{{- $pages := where site.RegularPages "Section" "ne" "" -}} {{- /* exclude non-section pages, e.g. /content/about.md */
+-}}
+{{ if or ($pages.Next .) ($pages.Prev .) }}
+<nav class="page-nav d-flex justify-content-between">
+  {{- with $pages.Next . }}
+  <a class="page-nav__previous-link fs-5 text-black" href="{{ .RelPermalink }}">{{ i18n "previousPage" }}</a>
+  {{- end }}
+  {{- with $pages.Prev . }}
+  <a class="page-nav__next-link fs-5 text-black" href="{{ .RelPermalink }}">{{ i18n "nextPage" }}</a>
+  {{- end }}
+</nav>
+{{ end }}

@@ -1,0 +1,461 @@
+/* Custom Tarteaucitron Styling - Locomotive.ca inspired */
+/* Minimalist, high-contrast, bottom-left positioned cookie banner */
+
+/* Remove background blur and overlay when cookie banner is active */
+html.tarteaucitronBeforeVisible,
+body.tarteaucitronBeforeVisible,
+html.tarteaucitronIsOpen,
+body.tarteaucitronIsOpen,
+html.tarteaucitron-modal-open,
+body.tarteaucitron-modal-open,
+html.tarteaucitron-modal-open-noscroll,
+body.tarteaucitron-modal-open-noscroll,
+#tarteaucitronRoot {
+    filter: none !important;
+    -webkit-filter: none !important;
+    overflow: auto !important;
+    /* Allow scrolling */
+    height: auto !important;
+}
+
+/* Specifically remove the pseudo-element overlay and blur */
+html body.tarteaucitron-modal-open div#tarteaucitronRoot::before,
+html body .tarteaucitronSize-middle.tarteaucitronBeforeVisible::before,
+#tarteaucitronBack,
+.tarteaucitronBlur-div {
+    display: none !important;
+    content: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    pointer-events: none !important;
+}
+
+/* Hide the small fixed alert button (the counter in bottom-right) */
+#tarteaucitronAlertSmall,
+#tarteaucitronPercentage,
+#tarteaucitronCookiesNumber {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Hide default tarteaucitron elements we don't want */
+#tarteaucitronIcon,
+#tarteaucitronManager {
+    display: none !important;
+}
+
+/* Main alert banner - bottom left positioning */
+#tarteaucitronAlertBig {
+    position: fixed !important;
+    bottom: 16px !important;
+    /* 4px grid */
+    left: 16px !important;
+    /* 4px grid */
+    right: auto !important;
+    top: auto !important;
+    width: 440px !important;
+    max-width: calc(100vw - 32px) !important;
+    text-align: left !important;
+
+    /* High-contrast black background, no blur */
+    background: #000000 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+
+    /* No shadows or borders */
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    /* Sharp corners */
+
+    /* Padding */
+    padding: 16px !important;
+    /* 16px padding */
+
+    /* Smooth transitions - NO !important on opacity to prevent blink */
+    opacity: 0;
+    transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease !important;
+    transform: translateY(0) !important;
+    z-index: 2147483646 !important;
+    /* Slightly lower than panel */
+
+    /* FLEX LAYOUT FOR SIBLINGS - Default to hidden or let library handle it */
+    display: none;
+    flex-wrap: wrap !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
+    /* 4px grid */
+    --tacTitleBanner: "" !important;
+    /* Remove emojis */
+}
+
+/* 
+   Only apply flex layout and full opacity when the library sets display: block 
+   This prevents the "blink" on page load because the default above is display: none / opacity: 0
+*/
+#tarteaucitronAlertBig[style*="display: block"],
+#tarteaucitronAlertBig[style*="display:block"] {
+    display: flex !important;
+    opacity: 1 !important;
+}
+
+/* Hide the head/emoji pseudo-elements */
+#tarteaucitronAlertBig::before,
+#tarteaucitronAlertBig::after,
+#tarteaucitronRoot.tarteaucitronSize-middle #tarteaucitronAlertBig::before,
+#tarteaucitronRoot.tarteaucitronSize-popup #tarteaucitronAlertBig::before {
+    display: none !important;
+    content: none !important;
+}
+
+/* Disclaimer text - take full width and stay on top */
+#tarteaucitronRoot #tarteaucitronAlertBig #tarteaucitronDisclaimerAlert,
+#tarteaucitronRoot #tarteaucitronAlertBig p,
+#tarteaucitronAlertBig #tarteaucitronDisclaimerAlert,
+#tarteaucitronAlertBig p {
+    width: 100% !important;
+    color: #ffffff !important;
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    text-align: left !important;
+    display: block !important;
+    order: 1 !important;
+}
+
+/* Ensure the span doesn't have default padding either */
+#tarteaucitronDisclaimerAlert {
+    padding: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* Buttons container - Side by side for top actions */
+#tarteaucitronAlertBig .tarteaucitronAlertBigTop {
+    margin-top: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    /* Side by side */
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    /* Align left */
+    gap: 12px !important;
+    width: 100% !important;
+}
+
+/* Ensure the customize button wrapper doesn't break layout */
+#tarteaucitronAlertBig #tarteaucitronCloseAlert {
+    margin-top: 0 !important;
+}
+
+/* Primary actions order: Accept (1), Personalize (2) */
+#tarteaucitronPersonalize2 {
+    order: 1 !important;
+}
+
+/* Accept */
+#tarteaucitronCloseAlert {
+    order: 2 !important;
+}
+
+/* Personalize */
+
+/* Common styling for both buttons (Accept & Personalize) */
+#tarteaucitronAlertBig button.tarteaucitronCTAButton,
+#tarteaucitronAlertBig button#tarteaucitronPersonalize2,
+#tarteaucitronAlertBig button#tarteaucitronCloseAlert {
+    border-radius: 100px !important;
+    /* Pill shaped */
+    padding: 12px 24px !important;
+    /* 4px grid */
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    text-transform: none !important;
+    width: auto !important;
+    min-width: 0 !important;
+    /* Removed fixed min-width */
+    text-align: center !important;
+    margin: 0 !important;
+}
+
+/* Accept button - order 2 */
+#tarteaucitronAlertBig button#tarteaucitronPersonalize2 {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: none !important;
+    order: 2 !important;
+}
+
+#tarteaucitronAlertBig button#tarteaucitronPersonalize2:hover {
+    background: #e0e0e0 !important;
+}
+
+/* Personalize button - order 3 (Side by side with Accept) */
+#tarteaucitronAlertBig button#tarteaucitronCloseAlert {
+    background: transparent !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    order: 3 !important;
+}
+
+#tarteaucitronAlertBig button#tarteaucitronCloseAlert:hover {
+    border-color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Deny button - simple link at the bottom (order 4) */
+#tarteaucitronAlertBig button#tarteaucitronAllDenied2 {
+    background: transparent !important;
+    color: rgba(255, 255, 255, 0.6) !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 8px 0 0 0 !important;
+    /* Minimal gap below buttons */
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    text-decoration: underline !important;
+    width: 100% !important;
+    /* Take full width to stack below buttons */
+    min-width: 0 !important;
+    text-align: left !important;
+    border-radius: 0 !important;
+    order: 4 !important;
+}
+
+#tarteaucitronAlertBig button#tarteaucitronAllDenied2:hover {
+    color: #ffffff !important;
+    background: transparent !important;
+}
+
+/* Links (privacy policy, etc.) */
+#tarteaucitronAlertBig a {
+    color: rgba(255, 255, 255, 0.7) !important;
+    text-decoration: underline !important;
+    font-size: 13px !important;
+}
+
+#tarteaucitronAlertBig a:hover {
+    color: #ffffff !important;
+}
+
+/* Cookie management panel styling - Main Container */
+#tarteaucitron,
+#tarteaucitronRoot #tarteaucitron {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border-radius: 0 !important;
+    box-shadow: 0px 8px 48px rgba(0, 0, 0, 0.12) !important;
+    border: none !important;
+    z-index: 2147483647 !important;
+    padding: 24px !important;
+    box-sizing: border-box !important;
+}
+
+/* Apply flexbox only when panel is visible */
+#tarteaucitron[style*="display: block"],
+#tarteaucitron[style*="display:block"],
+#tarteaucitronRoot #tarteaucitron[style*="display: block"],
+#tarteaucitronRoot #tarteaucitron[style*="display:block"] {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Inner containers - Remove padding to prevent double-padding */
+#tarteaucitronServices,
+#tarteaucitronCookiesList,
+#tarteaucitronCookiesListMain {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    flex: 1 !important;
+    min-height: 0 !important;
+}
+
+/* Ensure inner content respects the padding */
+#tarteaucitron .tarteaucitronTitle,
+#tarteaucitron .tarteaucitronBorder,
+#tarteaucitron .tarteaucitronLine,
+#tarteaucitron .tarteaucitronMainLine {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Override default internal padding that might double up */
+#tarteaucitron .tarteaucitronTitle {
+    margin-bottom: 20px !important;
+    padding-bottom: 15px !important;
+    padding-top: 0 !important;
+}
+
+#tarteaucitron #tarteaucitronClosePanel {
+    color: #000000 !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 100px !important;
+}
+
+#tarteaucitron .tarteaucitronTitle {
+    color: #000000 !important;
+    background: #ffffff !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+#tarteaucitron .tarteaucitronBorder {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    border-radius: 0 !important;
+}
+
+/* Rounded buttons in the management panel */
+/* Rounded buttons in the management panel - Base Styles */
+#tarteaucitron button,
+#tarteaucitron .tarteaucitronCheck,
+#tarteaucitron .tarteaucitronDeny,
+#tarteaucitron .tarteaucitronAllow,
+#tarteaucitron button.tarteaucitronCTAButton,
+#tarteaucitron #tarteaucitronAllAllowed,
+#tarteaucitron #tarteaucitronAllDenied,
+#tarteaucitron #tarteaucitronSave,
+#tarteaucitron #tarteaucitronSaveButton {
+    border-radius: 100px !important;
+    background: #e9ecef !important;
+    /* bs-200 light gray */
+    color: #000000 !important;
+    border: 1px solid transparent !important;
+    font-weight: 600 !important;
+}
+
+/* Save Button - Black with White Text */
+#tarteaucitron #tarteaucitronSaveButton {
+    background: #000000 !important;
+    color: #ffffff !important;
+    border: 1px solid #000000 !important;
+}
+
+/* Save Container - Keep White */
+#tarteaucitron #tarteaucitronSave {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: none !important;
+}
+
+/* Selected State - Add Black Border */
+#tarteaucitronRoot #tarteaucitron .tarteaucitronIsAllowed .tarteaucitronAllow,
+#tarteaucitronRoot #tarteaucitron .tarteaucitronIsDenied .tarteaucitronDeny {
+    border: 2px solid #000000 !important;
+    background: #ffffff !important;
+    text-shadow: none !important;
+    /* Optional: Clean white on selection */
+}
+
+/* Ensure text-shadow is removed from ALL buttons in the panel - High Specificity */
+#tarteaucitronRoot #tarteaucitron button[aria-pressed="true"],
+#tarteaucitronRoot #tarteaucitron .tarteaucitronAllow[aria-pressed="true"],
+#tarteaucitronRoot #tarteaucitron .tarteaucitronDeny[aria-pressed="true"],
+#tarteaucitronRoot #tarteaucitron .tarteaucitronCheck,
+#tarteaucitronRoot #tarteaucitron .tarteaucitronCross,
+#tarteaucitronRoot #tarteaucitron .tarteaucitronIsAllowed .tarteaucitronAllow,
+#tarteaucitronRoot #tarteaucitron .tarteaucitronIsDenied .tarteaucitronDeny {
+    text-shadow: none !important;
+}
+
+/* Align title and paragraph to the left */
+#tarteaucitronRoot .tarteaucitronH1,
+#tarteaucitronRoot #tarteaucitronInfo,
+#tarteaucitronRoot #tarteaucitronDisclaimer {
+    text-align: left !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    width: 100% !important;
+}
+
+#tarteaucitronRoot #tarteaucitronInfo p {
+    text-align: left !important;
+    width: 100% !important;
+    max-width: none !important;
+    display: block !important;
+    border-top: none !important;
+    border-bottom: none !important;
+}
+
+/* Ensure the container of the paragraph is also full width */
+#tarteaucitronRoot #tarteaucitronInfo {
+    width: 100% !important;
+    max-width: none !important;
+    display: block !important;
+    border-top: none !important;
+    border-bottom: none !important;
+}
+
+/* Hide branding link (targeting both ID and Class) */
+#tarteaucitronSelfLink,
+.tarteaucitronSelfLink {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* Ensure all internal containers are white */
+#tarteaucitron .tarteaucitronLine,
+#tarteaucitron .tarteaucitronMainLine,
+#tarteaucitron .tarteaucitronCategory,
+#tarteaucitron .tarteaucitronService {
+    background: #ffffff !important;
+    color: #000000 !important;
+}
+
+/* Category toggle buttons - Remove padding and background */
+#tarteaucitron .tarteaucitronTitle button,
+#tarteaucitron .tarteaucitronTitle button.catToggleBtn {
+    background: transparent !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    font-weight: 700 !important;
+    text-align: left !important;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+    #tarteaucitronAlertBig {
+        width: calc(100vw - 32px) !important;
+        left: 16px !important;
+        bottom: 16px !important;
+        padding: 16px !important;
+    }
+
+    #tarteaucitronAlertBig #tarteaucitronCloseAlert {
+        flex-direction: column !important;
+    }
+
+    #tarteaucitronAlertBig button {
+        width: 100% !important;
+    }
+}
+
+/* Force hide banner when class is applied by JS */
+#tarteaucitronAlertBig.tarteaucitron-force-hidden {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}

@@ -1,0 +1,47 @@
+<div class="site-header">
+
+  <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="nav-pill d-flex align-items-center">
+        <a class="nav-brand d-flex align-items-center" href="{{ "/" | relLangURL }}">
+          <span class="nav-brand__mark" aria-hidden="true">
+            <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.4795 12.7998C10.4795 16.7762 7.25572 20 3.2793 20H0.078125V12.7998H10.4795ZM20.2324 12.6152C22.2716 12.6152 23.9248 14.2684 23.9248 16.3076C23.9248 18.3468 22.2716 20 20.2324 20H13.6172V12.6152H20.2324ZM19.2324 4C21.2716 4 22.9248 5.65318 22.9248 7.69238C22.9248 9.73155 21.2716 11.3848 19.2324 11.3848H13.6172V4H19.2324ZM12.3867 11.2002H1.98535C1.98535 7.22376 5.20912 4.00003 9.18555 4H12.3867V11.2002Z" fill="black"/>
+</svg> -->
+
+            <svg viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+              <path d="M10.4014 8.7998C10.4014 12.7762 7.1776 16 3.20117 16H0V8.7998H10.4014ZM20.1533 8.61523C22.1924 8.61532 23.8457 10.2685 23.8457 12.3076C23.8457 14.3468 22.1925 15.9999 20.1533 16H13.5371V8.61523H20.1533ZM19.1533 0C21.1925 8.70189e-05 22.8457 1.65323 22.8457 3.69238C22.8457 5.7315 21.1924 7.38468 19.1533 7.38477H13.5371V0H19.1533ZM12.3096 7.2002H1.9082C1.9082 3.22375 5.13195 3.73674e-06 9.1084 0H12.3096V7.2002Z" />
+            </svg>
+          </span>
+          <span class="nav-brand__name">Sébastien Beauchamp</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation menu">
+          <span class="mobile-nav-open text-black">Menu</span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="mt-0 mb-3 my-md-0">
+            <ul class="navbar-nav nav-links">
+              {{- partial "header/menu.html" (dict "menuID" "main" "page" .) -}}
+              <!-- {{- partial "header/language_selector.html" . -}} -->
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="nav-utils align-items-center">
+        {{- partial "header/language_badge.html" . -}}
+        {{- if site.Params.available }}
+        <span class="availability-badge">
+          <span class="availability-badge__dot" aria-hidden="true"></span>
+          {{ i18n "availabilityStatus" }}
+        </span>
+        {{- end }}
+      </div>
+
+    </div>
+  </nav>
+
+</div>

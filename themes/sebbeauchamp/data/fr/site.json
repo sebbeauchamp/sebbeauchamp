@@ -1,0 +1,36 @@
+{
+    "site": {
+        "home_title": "Designer d’interactions et de marque, je m’aligne sur vos objectifs en prenant en compte les enjeux esthétiques, techniques et stratégiques.",
+        "home_description": "Je m’aligne sur vos objectifs en prenant en compte les enjeux esthétiques, techniques et stratégiques.",
+        "artist_title": "Peintre et dessinateur",
+        "artist_presentation": "André Jasmin est l’un des pionniers de l’art abstrait au Québec. Pendant plus de 70 ans, il n’a jamais cessé de créer, porté par un désir constant d’explorer et une vision généreuse de l’art.",
+        "artist_button": "Découvrir l'artiste",
+        "art_title": "Œuvres",
+        "project_presentation": "Projets récents",
+        "project_button": "Voir tous",
+        "about_title": "Un projet réfléchi coûte moins d’énergie et traverse mieux le temps. Les résultats suivent souvent assez naturellement.",
+        "about_link": "Lire à propos",
+        "about_service_title": "Services",
+        "about_service_1": "Site vitrine",
+        "about_service_2": "Ecommerce",
+        "about_service_3": "Design de produits",    
+        "about_service_4": "Application",    
+        "about_service_5": "Design système",    
+        "about_service_6": "Identité de marque",    
+        "about_service_7": "Audit",  
+        
+        "about_interest_title": "Intérêts",
+        "about_interest_1": "Alimentation",
+        "about_interest_2": "Environnement",
+        "about_interest_3": "Santé",    
+        "about_interest_4": "Sport",  
+        "about_interest_5": "Art et culture",   
+        "about_interest_6": "Urbanisme et architecture",    
+        "about_interest_7": "Technologie et innovation",    
+
+
+        "contact_title": "Contactez-nous",
+        "footer_text": "Envie d’acquérir une œuvre, organiser une exposition ou pour toute autre demande",
+        "footer_cta": "écrivez-nous"
+    }
+}

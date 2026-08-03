@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="border-top border-black border-2 section-spacer-top-only">
+    <div class="mb-5 footer-content">
+              {{- if site.Params.available }}
+        <span class="availability-badge">
+          <span class="availability-badge__dot" aria-hidden="true"></span>
+          {{ i18n "availabilityStatus" }}
+        </span>
+        {{- end }}
+      {{ $data := index .Site.Data .Site.Language.Lang }} {{ range $data.site }}
+      <p>{{ .footer_text }}, {{ .footer_cta }}. <a class=""
+          href="mailto:andrejasmin@gmail.com">andrejasmin@gmail.com</a>
+      </p>
+    </div>
+    {{ end }}
+    {{ partial "footer/copyright.html" . }}
+  </div>
+</div>

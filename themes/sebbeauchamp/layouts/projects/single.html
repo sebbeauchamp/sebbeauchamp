@@ -1,0 +1,76 @@
+{{ define "main" }}
+<div class="container position-relative">
+  <div class="row mt-md-5">
+    <!-- <div class="col-12"><small>Accueil / Projets /</small></div> -->
+    <div class="col-12 mb-4">
+      <h1 class="project">{{ .Title }}</h1>
+    </div>
+  </div>
+
+  <div class="row mb-5">
+      <div class="col-lg-2 col-md-3 col-sm-3 col-12 mb-md-0 mb-3 ">
+        <img loading="eager" decoding="async" alt="{{ .Title }}" class="img-fluid rounded"
+            src="../images/{{ .Params.imagepreview }}" />
+      </div>
+
+      <div class="col-lg-5 col-md-9 col-sm-9 col-12 mb-3 ">
+        <p class="project-intro">{{ .Params.intro }}</p>
+      </div>
+
+      <div class="col-lg-4 col-12 align-self-end ms-auto mb-3">
+        <ul class="project-meta list-unstyled mb-0">
+          {{ if .Params.description }}
+          <li class="project-meta__row">
+            <span class="project-meta__label">Secteur</span>
+            <span class="project-meta__value">
+              <span class="tag">{{ .Params.description }}</span>
+            </span>
+          </li>
+          {{ end }}
+
+          {{ if or .Params.skills .Params.project_type }}
+          <li class="project-meta__row">
+            <span class="project-meta__label">Services</span>
+            <span class="project-meta__value">
+              {{ range .Params.skills }}<span class="tag">{{ . }}</span>{{ end }}
+              {{ range .Params.project_type }}<span class="tag">{{ . }}</span>{{ end }}
+            </span>
+          </li>
+          {{ end }}
+
+          {{ if .Params.tools }}
+          <li class="project-meta__row">
+            <span class="project-meta__label">Solutions</span>
+            <span class="project-meta__value">
+              {{ range .Params.tools }}<span class="tag">{{ . }}</span>{{ end }}
+            </span>
+          </li>
+          {{ end }}
+
+          {{ if .Params.link }}
+          <li class="project-meta__row">
+            <span class="project-meta__label">Lien</span>
+            <span class="project-meta__value">
+              <a href="{{ .Params.link }}" target="_blank" rel="noopener">{{ .Params.link | strings.TrimPrefix "https://" | strings.TrimPrefix "http://" | strings.TrimSuffix "/" }} <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.59269 5.4V4H12.2147V10.622H10.8007V6.394L5.29869 11.896L4.30469 10.902L9.80669 5.4H5.59269Z" fill="black"/>
+</svg>
+</a>
+            </span>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+
+    {{ if .Params.project_images }}
+    <div class="project-gallery">
+      {{ range .Params.project_images }}
+      <figure class="project-gallery__item">
+        <img src="../images/{{ . }}" alt="{{ . }}" loading="lazy" decoding="async" fetchpriority="high" />
+      </figure>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</div>
+
+{{ end }}

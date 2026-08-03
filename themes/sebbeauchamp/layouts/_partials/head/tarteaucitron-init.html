@@ -1,0 +1,11 @@
+{{- /* Tarteaucitron.js Cookie Consent - Head Section */ -}}
+{{- /* This partial loads the tarteaucitron CSS and sets the language */ -}}
+
+{{- /* Load tarteaucitron CSS from static directory */ -}}
+<link rel="stylesheet" href="/tarteaucitron/css/tarteaucitron.css">
+
+{{- /* Set the language for tarteaucitron based on Hugo's current language */ -}}
+<script>
+  // Set tarteaucitron language before initialization
+  window.tarteaucitronForceLanguage = '{{ .Language.Lang }}';
+</script>

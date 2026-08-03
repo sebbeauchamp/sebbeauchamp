@@ -1,0 +1,96 @@
+{{ define "main" }}
+
+{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ range $data.site }}
+<div class="home">
+<div class="container">
+  <div class="mt-5 mb-md-5 mb-3 pt-3 pt-md-5 col-12">
+    <h1 class="">{{ .home_title }}</h1>
+    <!-- <p class="mt-5 lead text-muted col-md-6">{{ .home_description }}</p>
+    <span class="text-muted"> Designer d’interactions<br/>& créateur de marque</span> -->
+  </div>
+</div>
+
+<div class="container">
+  <div>
+    <div>
+      <div class="row work">
+        <div class="d-flex mb-3">
+        <span>{{ .project_presentation }}</span>
+      <a class="link ms-auto" href="{{ "projects" | relLangURL }}">{{ .project_button }}</a>
+    </div>
+        {{ range ( where site.RegularPages "Type" "projects" | first 3 ) }}
+        <div class="mb-5 col-md-4 col-12 position-relative">
+          <img loading="eager" decoding="async" alt="{{ .Title }}" class="img-fluid"
+            src="projects/images/{{ .Params.imagepreview }}" />
+          <div class="mt-md-3 mt-2">
+            <h2 class="h5 mb-0">
+              <a class="text-black text-decoration-none stretched-link" href="{{ .RelPermalink }}">{{ .Title
+                }}</a>
+            </h2>
+            <p class="text-muted">{{ .Params.description }}</p>
+            <div class="d-inline-flex mt-1">
+              {{ if .Params.project_type }}
+              {{range .Params.project_type}}
+                <span class="tag">{{ . }}</span>
+              {{end}}
+            {{end}}
+              {{ if .Params.skills }}
+              {{range .Params.skills}}
+                <span class="tag">{{ . }}</span>
+              {{end}}
+            {{end}}
+                                    {{ if .Params.tools }}
+              {{range .Params.tools}}
+                <span class="tag">{{ . }}</span>
+              {{end}}
+            {{end}}
+
+            </div>
+          </div>
+        </div>
+        {{end}}
+      </div>
+    </div>
+
+
+  </div>
+</div>
+</div>
+
+<div class="container pt-5 mt-5">
+
+    <div class="row">
+      <div class="col-lg-7 col-md-9 col-12">
+        <h2>{{ .about_title }}</h2>
+      </div>
+      <div class="col-lg-7 col-md-9 col-12">  
+        <a class="link" href="{{ "info" | relLangURL }}">{{ .about_link }}</a>
+      </div>
+      <div class="col-lg-2 col-md-6 col-6">
+        <p class="my-0 fw-bold">{{ .about_service_title }}</p>
+        <p class="my-0 text-muted">{{ .about_service_1 }}</p>
+        <p class="my-0 text-muted">{{ .about_service_2 }}</p>
+        <p class="my-0 text-muted">{{ .about_service_3 }}</p>
+        <p class="my-0 text-muted">{{ .about_service_4 }}</p>
+        <p class="my-0 text-muted">{{ .about_service_5 }}</p>
+        <p class="my-0 text-muted">{{ .about_service_6 }}</p>
+        <p class="my-0 text-muted">{{ .about_service_7 }}</p>
+      </div>
+      <div class="col-lg-2 col-md-6 col-6">
+        <p class="my-0 fw-bold">{{ .about_interest_title }}</p>
+        <p class="my-0 text-muted">{{ .about_interest_1 }}</p>
+        <p class="my-0 text-muted">{{ .about_interest_2 }}</p>
+        <p class="my-0 text-muted">{{ .about_interest_3 }}</p>
+        <p class="my-0 text-muted">{{ .about_interest_4 }}</p>
+        <p class="my-0 text-muted">{{ .about_interest_5 }}</p>
+        <p class="my-0 text-muted">{{ .about_interest_6 }}</p>
+        <p class="my-0 text-muted">{{ .about_interest_7 }}</p>
+      </div>
+    </div>
+</div>
+
+{{ end }}
+
+
+{{ end }}

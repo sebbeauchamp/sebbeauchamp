@@ -1,0 +1,48 @@
+{{- /* Include JavaScript files using Hugo's asset pipeline */ -}}
+{{- /* Theme's app.js (includes Bootstrap) */ -}}
+{{- $jsOptions := dict 
+    "targetPath" "js/app.js" 
+    "format" "iife"
+    "minify" false
+    "externals" (slice)
+}}
+{{- with resources.Get "js/app.js" | js.Build $jsOptions }}
+  {{- if eq hugo.Environment "development" }}
+    <script src="{{ .RelPermalink }}" defer></script>
+  {{- else }}
+    {{- with . | minify | fingerprint }}
+      <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" defer></script>
+    {{- end }}
+  {{- end }}
+{{- end }}
+
+{{- /* Custom JavaScript from project root (optional) */ -}}
+{{- with resources.Get "js/custom.js" | js.Build (dict "targetPath" "js/custom.js") }}\
+  {{- if eq hugo.Environment "development" }}
+    <script src="{{ .RelPermalink }}" defer></script>
+  {{- else }}
+    {{- with . | minify | fingerprint }}
+      <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" defer></script>
+    {{- end }}
+  {{- end }}
+{{- end }}
+
+{{- /* Tarteaucitron.js Cookie Consent Library */ -}}
+{{- /* Load from static directory so tarteaucitron can find its dependencies (lang files, etc.) */ -}}
+<script src="/tarteaucitron/tarteaucitron.js"></script>
+
+{{- /* Tarteaucitron Services (required for Google Analytics and other integrations) */ -}}
+<script src="/tarteaucitron/tarteaucitron.services.js"></script>
+
+{{- /* Tarteaucitron Configuration */ -}}
+{{- $tarteaucitronConfig := resources.Get "js/tarteaucitron-config.js" }}
+{{- if $tarteaucitronConfig }}
+  {{- if eq hugo.Environment "development" }}
+    <script src="{{ $tarteaucitronConfig.RelPermalink }}"></script>
+  {{- else }}
+    {{- with $tarteaucitronConfig | minify | fingerprint }}
+      <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
+    {{- end }}
+  {{- end }}
+{{- end }}
+

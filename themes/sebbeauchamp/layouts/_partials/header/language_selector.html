@@ -1,0 +1,19 @@
+{{ if hugo.IsMultilingual }}
+{{ if .IsTranslated -}}
+{{- /* link to translated page */ -}}
+{{ range .Translations -}}
+<li class="nav-item">
+  <a class="nav-link" href="{{ .RelPermalink }}">{{ .Language.LanguageName }}</a>
+</li>
+{{ end -}}
+{{ else -}}
+{{- /* link to home page */ -}}
+{{ range site.Languages -}}
+{{ if ne site.Language.Lang .Lang -}} {{- /* ignore current language */ -}}
+<li class="nav-item">
+  <a class="nav-link" href="{{ .Lang | relURL }}">{{ .LanguageName }}</a>
+</li>
+{{ end -}}
+{{ end -}}
+{{ end -}}
+{{ end }}

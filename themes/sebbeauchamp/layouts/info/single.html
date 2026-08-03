@@ -1,0 +1,36 @@
+{{ define "main" }}
+
+<!-- I don't use this layout -->
+
+{{ if .Params.classpage }}
+<div class="{{ .Params.classpage }}">
+
+  <div class="container my-5">
+    <div class="d-flex flex-column col-12 mb-5">
+      <h1 class="mt-5 pt-5">
+        {{ if .Params.overtitle }}
+        <small class="d-block fs-5 mb-2">{{ .Params.overtitle }}</small>
+        {{ end }}
+        <span class="d-block display-1">{{ .Title }}</span>
+      </h1>
+    </div>
+    <!-- <div class="d-flex flex-column col-md-7 col-12"> -->
+    <div class="d-flex flex-column col-12">
+      {{ .Content }}
+    </div>
+
+    <!-- Default in theme
+<h1>{{ .Title }}</h1>
+  {{ partial "page/author.html" . }}
+  {{ partial "main/dates.html" . }}
+  {{ partial "page/translation_list.html" . }}
+  {{ partial "page/toc.html" . }}
+
+  {{ partial "page/terms.html" (dict "taxonomy" "tags" "page" .) }}
+  {{ partial "page/terms.html" (dict "taxonomy" "categories" "page" .) }}
+  {{ partial "page/page_nav.html" . }}
+  {{ partial "page/page-end.html" . }} -->
+
+    {{ end }}
+  </div>
+  {{ end }}

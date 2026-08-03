@@ -7,12 +7,15 @@ module.exports = {
         autoprefixer(),
         purgecss({
             content: [
-                'themes/sbdesigner/layouts/**/*.html',
+                'themes/sebbeauchamp/layouts/**/*.html',
                 'content/**/*.md',
-                'content/**/*.html',
             ],
             whitelist: [
                 'lazyloaded',
+                // ...whitelister([
+                //     // './assets/sass/common/_syntax.scss',
+                //     // './assets/sass/components/_code.scss',
+                // ]),
     ],
 }),
 ],

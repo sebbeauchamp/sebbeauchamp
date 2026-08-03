@@ -1,0 +1,18 @@
+# Sort according to appearance order
+
+# Single page
+authorDelimiter: ", "
+lastmodWrapper: " (Modified: {{ .lastmod }})"
+tableOfContents: Table of Contents
+colon: ':' # Taxonomy, e.g. Tags:
+previousPage: "Previous" # Page nav
+nextPage: "Next" # Page nav
+themeInfo: Built with {{ .hugo }} and {{ .yue }} # Footer
+
+availabilityStatus: Available # Header availability badge
+artworks_links: See all artworks # Artworks page
+cookieSettings: Cookie settings # Footer link for tarteaucitron
+# 404 page, e.g. /en/404.html
+404Title: 404 – Page Not Found
+404Message: This page is no longer here… or perhaps it never existed.
+404HomeLinkMessage: Back to home

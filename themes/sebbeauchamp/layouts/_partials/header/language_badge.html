@@ -1,0 +1,31 @@
+{{- /*
+Renders a decorative single-link language toggle showing the language you'll
+switch to, linking to the equivalent page in that language. Desktop only —
+the plain-link fallback in language_selector.html covers mobile.
+*/}}
+{{ if hugo.IsMultilingual }}
+{{ $target := "" }}
+{{ $targetLang := "" }}
+{{ if .IsTranslated }}
+{{ range .Translations }}{{ $target = .RelPermalink }}{{ $targetLang = .Language.Lang }}{{ end }}
+{{ else }}
+{{ range site.Languages }}{{ if ne site.Language.Lang .Lang }}{{ $target = .Lang | relURL }}{{ $targetLang = .Lang }}{{ end }}{{ end }}
+{{ end }}
+{{ if $target }}
+<a class="lang-badge" href="{{ $target }}"
+  aria-label="{{ if eq site.Language.Lang "fr" }}Switch to English{{ else }}Passer en français{{ end }}">
+  <svg class="lang-badge__icon" viewBox="0 0 36 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path
+      d="M18 0.5C22.8855 0.5 27.2857 1.82113 30.4502 3.93066C33.6182 6.04264 35.5 8.90548 35.5 12C35.5 15.0945 33.6182 17.9574 30.4502 20.0693C27.2857 22.1789 22.8855 23.5 18 23.5C13.1145 23.5 8.71426 22.1789 5.5498 20.0693C2.38184 17.9574 0.5 15.0945 0.5 12C0.5 8.90548 2.38184 6.04264 5.5498 3.93066C8.71426 1.82113 13.1145 0.5 18 0.5Z"
+      stroke="currentColor" />
+    <path transform="translate(0,4.17)"
+      d="M18 0.5C22.9186 0.5 27.3476 1.36806 30.5283 2.75098C32.1195 3.44279 33.3763 4.25388 34.2275 5.12891C35.0762 6.00146 35.5 6.9123 35.5 7.82617C35.5 8.74004 35.0762 9.65088 34.2275 10.5234C33.3763 11.3985 32.1195 12.2096 30.5283 12.9014C27.3476 14.2843 22.9186 15.1523 18 15.1523C13.0814 15.1523 8.65244 14.2843 5.47168 12.9014C3.88051 12.2096 2.6237 11.3985 1.77246 10.5234C0.923752 9.65088 0.500026 8.74004 0.5 7.82617C0.5 6.9123 0.923782 6.00146 1.77246 5.12891C2.6237 4.25388 3.88051 3.44279 5.47168 2.75098C8.65245 1.36806 13.0814 0.5 18 0.5Z"
+      stroke="currentColor" />
+    <circle transform="translate(6,0)" cx="12" cy="12" r="11.5" stroke="currentColor" />
+    <path d="M0 13.02H6" stroke="currentColor" />
+    <path d="M29.5 13.02H35.5" stroke="currentColor" />
+  </svg>
+  <span class="lang-badge__label">{{ $targetLang | title }}</span>
+</a>
+{{ end }}
+{{ end }}

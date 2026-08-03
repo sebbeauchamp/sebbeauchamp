@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Design on André Jasmin</title>
+    <link>http://localhost:1313/tags/design/</link>
+    <description>Recent content in Design on André Jasmin</description>
+    <generator>Hugo</generator>
+    <language>fr</language>
+    <lastBuildDate>Wed, 11 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/design/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Beaulieu</title>
+      <link>http://localhost:1313/projects/beaulieu-foods/</link>
+      <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/beaulieu-foods/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Distillerie de Montréal</title>
+      <link>http://localhost:1313/projects/distillerie-de-montreal/</link>
+      <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/distillerie-de-montreal/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tous Ergo</title>
+      <link>http://localhost:1313/projects/tous-ergo/</link>
+      <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/tous-ergo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pro-Nutrition</title>
+      <link>http://localhost:1313/projects/pro-nutrition/</link>
+      <pubDate>Wed, 11 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/pro-nutrition/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bo-Coq</title>
+      <link>http://localhost:1313/projects/bo-coq/</link>
+      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/bo-coq/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,104 @@
+languageCode = 'fr'
+
+theme = "sebbeauchamp"
+baseURL = 'https://andrejasmin.com'
+defaultContentLanguage = "fr"
+defaultContentLanguageInSubdir = false
+enableGitInfo = false
+enableEmoji = true
+enableRobotsTXT = true
+
+
+
+[params]
+_merge = "deep"
+rssFullContent = true
+homePagerSize = 5
+sectionPagerSize = 10
+images = [ "images/andrejasmin.jpg" ]
+available = true
+
+[frontmatter]
+lastmod = [ "lastmod", ":default" ]
+
+[markup]
+_merge = "deep"
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[languages.en]
+contentDir = "content/en"
+dataDir = 'data/en'
+languageCode = "en"
+languageDirection = "ltr"
+languageName = "English"
+title = "André Jasmin"
+weight = 2
+
+#[[languages.en.menus.main]]
+# name = "Home"
+# pageRef = "/"
+# weight = 10
+
+[[languages.en.menus.main]]
+name = "Projects"
+pageRef = "/projects"
+weight = 20
+
+[[languages.en.menus.main]]
+name = "Info"
+pageRef = "/info"
+weight = 40
+
+# [[languages.en.menus.main]]
+# name = "Contact"
+# pageRef = "/contact"
+# weight = 50
+
+  [languages.en.params]
+  dateFormat = "Jan 02, 2006"
+  author = "Jane Doe"
+  description = "André Jasmin (1922-2020) - Pioneer of abstract art and artistic modernity in Quebec. Discover the works and legacy of this renowned Montreal painter and draftsman."
+
+[languages.en.params.footer.copyright]
+yearStart = 2025
+author = "Sébastien Beauchamp"
+
+[languages.fr]
+hasCJKLanguage = true
+contentDir = "content/fr"
+dataDir = 'data/fr'
+languageCode = "fr"
+languageDirection = "ltr"
+languageName = "Français"
+title = "André Jasmin"
+weight = 1
+
+#[[languages.fr.menus.main]]
+# name = "Accueil"
+# pageRef = "/"
+# weight = 10
+
+[[languages.fr.menus.main]]
+name = "Projets"
+pageRef = "/projets"
+weight = 20
+
+[[languages.fr.menus.main]]
+name = "Info"
+pageRef = "/info"
+weight = 40
+
+## [[languages.fr.menus.main]]
+# name = "Contact"
+# pageRef = "/contact"
+# weight = 50
+
+[languages.fr.params.footer.copyright]
+yearStart = 2025
+author = "Sébastien Beauchamp"
+
+[languages.fr.params]
+description = "André Jasmin (1922-2020) - Pionnier de l'art abstrait et de la modernité artistique au Québec. Découvrez les œuvres et l'héritage de ce peintre et dessinateur montréalais renommé."
+
