@@ -27,8 +27,5 @@ tools :
 - Figma
 - Shopify
 
-medium: 'Fusain sur papier'
-size: '26"x40" - 66 x 102 cm'
-
 ---
 

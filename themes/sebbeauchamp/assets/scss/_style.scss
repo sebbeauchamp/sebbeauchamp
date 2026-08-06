@@ -42,7 +42,6 @@ h5, .h5, h6, .h6 {
   }
 }
 
-
 nav {
 
   .navbar-collapse.show {
@@ -56,8 +55,14 @@ a.btn {
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
-  padding-left: 1vw;
-  padding-right: 1vw;
+  padding: 4px 12px;
+  margin: 0 4px;
+
+  &:hover{
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 100px;
+    text-decoration: none;
+  }
 }
 
 .navbar-brand{
@@ -67,7 +72,9 @@ a.btn {
   letter-spacing: -2%;
 }
 .mobile-nav-open {
-  font-size: 1.5rem;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: -2%;
 }
 
 .site-header {
@@ -79,13 +86,13 @@ a.btn {
 }
 
 .nav-pill {
-  gap: 4px;
-
-  @media (min-width: 992px) {
     background: white;
     border-radius: 48px;
-    padding: 10px 8px 10px 20px;
+    padding: 8px 16px 8px 20px;
     gap: 24px;
+   
+@media (min-width: 992px) {
+    padding: 8px 8px 8px 24px;
   }
 }
 
@@ -93,7 +100,7 @@ a.btn {
   gap: 6px;
   font-size: 16px;
   font-weight: 700;
-  letter-spacing: -0.16px;
+  letter-spacing: -2%;
   color: $black;
   white-space: nowrap;
 
@@ -120,10 +127,22 @@ a.btn {
   @media (min-width: 992px) {
     gap: 8px;
     margin: 0;
+    color: $black;
 
     .nav-link {
       padding: 0 1rem;
+      color: $black;
+
     }
+  }
+}
+
+a.nav-link {
+  color: $black;
+  font-size: 1em;
+
+  @media (max-width: 768px) {
+    font-size: 3rem;
   }
 }
 
@@ -201,21 +220,18 @@ a.btn {
   }
 }
 
-a.nav-link {
-  color: $black;
-  font-size: 1em;
 
-  @media (max-width: 768px) {
-    font-size: 3rem;
-  }
-}
 
 // ************** HOMEPAGE ********
 
 .home{
   h1{
-    // text-transform: uppercase;
-    font-size: clamp(1.75rem, 5vw, 4rem);
+
+    font-size: clamp(1.75rem, 5vw, 5rem);
+    padding:16vw 0px 12vw;
+    @media (min-width: 992px) {
+    padding:240px 0px 80px;
+  }
   }
 }
 .work img{
@@ -234,6 +250,14 @@ a.nav-link {
   color: #636965;
 }
 
+.home-about{
+    padding-top:64px ;
+    padding-bottom:64px;
+    @media (min-width: 992px) {
+    padding-top:120px ;
+    padding-bottom:80px;
+  }
+}
 
 
 // ************* PROJECTS SECTION **********
@@ -508,15 +532,68 @@ a {
   position: static;
 }
 
-.footer-content {
-  p {
-    font-size: 4rem;
-    line-height: 1.125;
+.footer__inner {
+  background: white;
+  border-radius: 16px 16px 0 0;
+  padding: 64px 0 48px;
 
-    // @media (max-width: $grid-breakpoints.md) {
-    @media (max-width: 640px) {
-      font-size: 1.5rem;
-    }
+  @media (max-width: 640px) {
+    padding: 40px 0 32px;
   }
 }
 
+.footer__availability {
+  margin-bottom: 24px;
+}
+
+.footer__main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px 24px;
+}
+
+.footer-content {
+  flex: 1 1 480px;
+  max-width: 560px;
+}
+
+.footer__heading {
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  font-size: clamp(28px, 3.2vw, 44px);
+  margin-bottom: 16px;
+}
+
+.footer__email {
+  display: inline-block;
+   font-size: 16px;
+    letter-spacing: -2%;
+}
+
+.footer__links {
+  flex: 0 0 auto;
+  margin: 0;
+
+  li:not(:last-child) {
+    margin-bottom: 4px;
+  }
+
+  .nav-link,
+  a {
+    padding: 0;
+    font-size: 16px;
+    letter-spacing: -2%;
+  }
+}
+
+.footer__meta {
+  flex: 0 0 auto;
+}
+
+.footer__copyright {
+  margin: 80px 0 0;
+  font-size: 12px;
+  letter-spacing: -2%;
+}

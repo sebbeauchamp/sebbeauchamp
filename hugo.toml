@@ -17,6 +17,23 @@ homePagerSize = 5
 sectionPagerSize = 10
 images = [ "images/andrejasmin.jpg" ]
 available = true
+email = "contact@sebastienbeauchamp.com"
+
+[[params.social]]
+name = "Linkedin"
+url = "#"
+
+[[params.social]]
+name = "Dribbble"
+url = "#"
+
+[[params.social]]
+name = "Instagram"
+url = "#"
+
+[[params.social]]
+name = "Unsplash"
+url = "#"
 
 [frontmatter]
 lastmod = [ "lastmod", ":default" ]
@@ -51,10 +68,10 @@ name = "Info"
 pageRef = "/info"
 weight = 40
 
-# [[languages.en.menus.main]]
-# name = "Contact"
-# pageRef = "/contact"
-# weight = 50
+[[languages.en.menus.main]]
+name = "Contact"
+pageRef = "/contact"
+weight = 50
 
   [languages.en.params]
   dateFormat = "Jan 02, 2006"
@@ -82,7 +99,7 @@ weight = 1
 
 [[languages.fr.menus.main]]
 name = "Projets"
-pageRef = "/projets"
+pageRef = "/projects"
 weight = 20
 
 [[languages.fr.menus.main]]
@@ -90,13 +107,13 @@ name = "Info"
 pageRef = "/info"
 weight = 40
 
-## [[languages.fr.menus.main]]
-# name = "Contact"
-# pageRef = "/contact"
-# weight = 50
+[[languages.fr.menus.main]]
+name = "Contact"
+pageRef = "/contact"
+weight = 50
 
 [languages.fr.params.footer.copyright]
-yearStart = 2025
+yearStart = 2008
 author = "Sébastien Beauchamp"
 
 [languages.fr.params]

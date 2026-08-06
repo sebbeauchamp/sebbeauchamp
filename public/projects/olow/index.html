@@ -61,19 +61,22 @@
           <span class="nav-brand__name">Sébastien Beauchamp</span>
         </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        <button class="navbar-toggler navbar-nav nav-links" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
           aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation menu">
-          <span class="mobile-nav-open text-black">Menu</span>
+          <span class="mobile-nav-open ">Menu</span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="mt-0 mb-3 my-md-0">
             <ul class="navbar-nav nav-links">
 <li class="nav-item">
-  <a class="nav-link fw-normal" class="nav-link">Projets</a>
+  <a class="nav-link fw-normal" aria-current="true" class="nav-link" href="/projects/">Projets</a>
 </li>
 <li class="nav-item">
   <a class="nav-link fw-normal" class="nav-link" href="/a-propos/">Info</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link fw-normal" class="nav-link" href="/contact/">Contact</a>
 </li>
             </ul>
           </div>
@@ -105,10 +108,6 @@
 
 
 
-        <span class="availability-badge">
-          <span class="availability-badge__dot" aria-hidden="true"></span>
-          Disponible
-        </span>
       </div>
 
     </div>
@@ -141,7 +140,7 @@
         <ul class="project-meta list-unstyled mb-0">
           
           <li class="project-meta__row">
-            <span class="project-meta__label">Secteur</span>
+            <span class="project-meta__label">Industrie</span>
             <span class="project-meta__value">
               <span class="tag">Mode durable</span>
             </span>
@@ -220,33 +219,59 @@
 
   </main>
   <footer class="footer">
-    <div class="container">
-  <div class="border-top border-black border-2 section-spacer-top-only">
-    <div class="mb-5 footer-content">
-        <span class="availability-badge">
-          <span class="availability-badge__dot" aria-hidden="true"></span>
-          Disponible
-        </span>
-       
-      <p>Envie d’acquérir une œuvre, organiser une exposition ou pour toute autre demande, écrivez-nous. <a class=""
-          href="mailto:andrejasmin@gmail.com">andrejasmin@gmail.com</a>
-      </p>
+    <div class="footer__inner">
+  <div class="container">
+    <span class="availability-badge footer__availability">
+      <span class="availability-badge__dot" aria-hidden="true"></span>
+      Disponible
+    </span>
+
+    <div class="footer__main">
+      <div class="footer-content">
+        <p class="footer__heading">Parle-moi de tes projets, on les rendra concrêts.</p>
+        <a class="footer__email" href="mailto:contact@sebastienbeauchamp.com">contact@sebastienbeauchamp.com</a>
+      </div>
+
+      <ul class="footer__links list-unstyled">
+<li class="nav-item">
+  <a class="nav-link fw-normal" aria-current="true" class="nav-link" href="/projects/">Projets</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link fw-normal" class="nav-link" href="/a-propos/">Info</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link fw-normal" class="nav-link" href="/contact/">Contact</a>
+</li></ul>
+      <ul class="footer__links list-unstyled">
+        
+        <li><a href="#" target="_blank" rel="noopener">Linkedin</a></li>
+        
+        <li><a href="#" target="_blank" rel="noopener">Dribbble</a></li>
+        
+        <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+        
+        <li><a href="#" target="_blank" rel="noopener">Unsplash</a></li>
+        
+      </ul>
+
+      <div class="footer__meta">
+        <ul class="footer__links list-unstyled">
+          <li><a href="mailto:contact@sebastienbeauchamp.com?subject=Infolettre">Infolettre</a></li>
+          <li><a href="#" onclick="tarteaucitron.userInterface.openPanel(); return false;">Cookies</a></li>
+        </ul>
+
+      </div>
     </div>
-    
-    <p class="small text-uppercase">
-      <a href="#" onclick="tarteaucitron.userInterface.openPanel(); return false;">
-        Gestion des cookies
-      </a> • credit <a href="https://sebastienbeauchamp.com" target="_blank">Sébastien Beauchamp</a></br>
-  &copy; 2025-2026
-</p>
+
+            <p class="footer__copyright">&copy; Sébastien Beauchamp • 2008-2026</p>
+
   </div>
 </div>
   </footer>
   
-    <script src="/js/app.js" defer></script>\
+    <script src="/js/app.js" defer></script>
     <script src="/js/custom.js" defer></script><script src="/tarteaucitron/tarteaucitron.js"></script><script src="/tarteaucitron/tarteaucitron.services.js"></script>
     <script src="/js/tarteaucitron-config.js"></script>
 
 
-</body>
 </html>

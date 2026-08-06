@@ -10,8 +10,10 @@ nextPage: "Next" # Page nav
 themeInfo: Built with {{ .hugo }} and {{ .yue }} # Footer
 
 availabilityStatus: Available # Header availability badge
+footerHeading: Tell me about your projects, let's make them real. # Footer heading
+newsletter: Newsletter # Footer link
 artworks_links: See all artworks # Artworks page
-cookieSettings: Cookie settings # Footer link for tarteaucitron
+cookieSettings: Cookies # Footer link for tarteaucitron
 # 404 page, e.g. /en/404.html
 404Title: 404 – Page Not Found
 404Message: This page is no longer here… or perhaps it never existed.

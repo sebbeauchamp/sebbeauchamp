@@ -1,4 +1,3 @@
-{{- $author := site.Params.footer.copyright.author }}
 {{- $yearStart := string site.Params.footer.copyright.yearStart }}
 {{- $yearEnd := string (default (now.Format "2006") site.Params.footer.copyright.yearEnd) }}
 {{- $yearSpan := "" }}
@@ -10,9 +9,4 @@
 {{- else }}
 {{- $yearSpan = printf "%s-%s" $yearStart $yearEnd }}
 {{- end -}}
-<p class="small text-uppercase">
-      <a href="#" onclick="tarteaucitron.userInterface.openPanel(); return false;">
-        {{ i18n "cookieSettings" }}
-      </a> • credit <a href="https://sebastienbeauchamp.com" target="_blank">{{ $author }}</a></br>
-  &copy; {{ $yearSpan }}
-</p>
+<p class="footer__copyright">&copy; Sébastien Beauchamp • {{ $yearSpan }}</p>

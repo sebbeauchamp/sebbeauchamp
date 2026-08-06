@@ -17,9 +17,9 @@
           <span class="nav-brand__name">Sébastien Beauchamp</span>
         </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        <button class="navbar-toggler navbar-nav nav-links" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
           aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation menu">
-          <span class="mobile-nav-open text-black">Menu</span>
+          <span class="mobile-nav-open ">Menu</span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -33,12 +33,12 @@
       </div>
       <div class="nav-utils align-items-center">
         {{- partial "header/language_badge.html" . -}}
-        {{- if site.Params.available }}
+        <!-- {{- if site.Params.available }}
         <span class="availability-badge">
           <span class="availability-badge__dot" aria-hidden="true"></span>
           {{ i18n "availabilityStatus" }}
         </span>
-        {{- end }}
+        {{- end }} -->
       </div>
 
     </div>

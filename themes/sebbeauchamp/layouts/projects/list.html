@@ -3,10 +3,10 @@ $sectionPagerSize := or site.Params.sectionPagerSize 7 }} {{ $paginator :=
 .Paginate $pages $sectionPagerSize }}
 
 <div class="container my-5 ">
-  <h1 class="mt-5 pt-5">{{ .Title }}</h1>
+  <h1 class="mt-5 pt-5 h2">{{ .Title }}</h1>
   {{ .Content }}
   <!-- <div class="d-inline-flex flex-wrap align-items-center"> -->
-  <ul class="d-inline-flex flex-wrap align-items-center list-unstyled art justify-content-between">
+  <!-- <ul class="d-inline-flex flex-wrap align-items-center list-unstyled art justify-content-between">
     {{ range $paginator.Pages }}
     <li class="list-inline-item m-0 col-lg-6 col-md-10 col-sm-12 position-relative">
       <img fetchpriority="high" decoding="async" alt="{{ .Title }} - André Jasmin" class="img-fluid"
@@ -20,11 +20,27 @@ $sectionPagerSize := or site.Params.sectionPagerSize 7 }} {{ $paginator :=
       </div>
     </li>
     {{end}}
-  </ul>
+  </ul> -->
+  <div class="row">
+ {{ range ( where site.RegularPages "Type" "projects" ) }}
+        <div class="mb-5 col-md-4 col-12 position-relative work">
+          <img loading="eager" decoding="async" alt="{{ .Title }}" class="img-fluid"
+            src="/projects/images/{{ .Params.imagepreview }}" />
+          <div class="mt-md-3 mt-2">
+            <h2 class="h5 mb-0">
+              <a class="text-black text-decoration-none stretched-link" href="{{ .RelPermalink }}">{{ .Title
+                }}</a>
+            </h2>
+            <p class="text-muted">{{ .Params.description }}</p>
+          </div>
+        </div>
+        {{end}}
+  
 </div>
-<nav class="paginator d-flex justify-content-center align-items-center">
+</div>
+<!-- <nav class="paginator d-flex justify-content-center align-items-center">
   {{- partial "pagination.html" . }} {{/* embedded template */}}
-</nav>
+</nav> -->
 </div>
 
 {{ end }}

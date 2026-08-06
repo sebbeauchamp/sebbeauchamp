@@ -7,8 +7,10 @@ nextPage: "Suivante"
 themeInfo: Conçu avec {{ .hugo }} et {{ .yue }}
 
 availabilityStatus: Disponible # Header availability badge
+footerHeading: Parle-moi de tes projets, on les rendra concrêts. # Footer heading
+newsletter: Infolettre # Footer link
 artworks_links: Voir toutes les œuvres # Artworks page
-cookieSettings: Gestion des cookies # Footer link for tarteaucitron
+cookieSettings: Cookies # Footer link for tarteaucitron
 # 404 page, e.g. /fr/404.html
 404Title: 404 – Page introuvable
 404Message: Cette page n’est plus là… ou peut-être n’a-t-elle jamais existé.
