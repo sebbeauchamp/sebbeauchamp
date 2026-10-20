@@ -326,7 +326,7 @@ a.nav-link {
 .project-gallery {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 1vw;
+  gap: 2vw;
   margin: 6vw 0;
 
   &__item {
@@ -340,7 +340,7 @@ a.nav-link {
       height: 100%;
       object-fit: cover;
       display: block;
-      border-radius: 6px;
+      border-radius: 1.25em;
     }
 
     // 3rd, 4th and 5th image of every group of 5 sit three across

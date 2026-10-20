@@ -10018,7 +10018,7 @@ a.nav-link {
 .project-gallery {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 1vw;
+  gap: 2vw;
   margin: 6vw 0; }
   .project-gallery__item {
     grid-column: span 12;
@@ -10030,7 +10030,7 @@ a.nav-link {
       height: 100%;
       object-fit: cover;
       display: block;
-      border-radius: 6px; }
+      border-radius: 1.25em; }
     .project-gallery__item:nth-child(5n+3), .project-gallery__item:nth-child(5n+4), .project-gallery__item:nth-child(5n) {
       grid-column: span 4;
       aspect-ratio: 4 / 5; }
