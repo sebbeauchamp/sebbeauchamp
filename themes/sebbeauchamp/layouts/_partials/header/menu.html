@@ -31,7 +31,7 @@ Renders a menu for the given menu ID.
 {{- end }}
 {{- end }}
 <li class="nav-item">
-  <a class="nav-link fw-normal" {{- range $k, $v :=$attrs }} {{- with $v }} {{- printf " %s=%q" $k $v | safeHTMLAttr }} {{- end }}
+  <a class="nav-link" {{- range $k, $v :=$attrs }} {{- with $v }} {{- printf " %s=%q" $k $v | safeHTMLAttr }} {{- end }}
     {{- end -}}>{{ $name }}</a>
   {{- with .Children }}
   <ul>

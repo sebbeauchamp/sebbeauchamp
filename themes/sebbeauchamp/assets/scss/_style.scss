@@ -55,13 +55,11 @@ a.btn {
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
-  padding: 4px 12px;
-  margin: 0 4px;
+  padding: 0;
+  margin: 0;
 
   &:hover{
-    background-color: rgba(0, 0, 0, 0.05);
-    border-radius: 100px;
-    text-decoration: none;
+    text-decoration: underline;
   }
 }
 
@@ -78,44 +76,43 @@ a.btn {
 }
 
 .site-header {
-  padding-top: 24px;
+  padding: 24px 0;
 
   @media (max-width: 640px) {
-    padding-top: 16px;
+    padding: 16px 0;
+  }
+
+  .navbar {
+    padding: 0;
+  }
+
+  &__inner {
+    @media (min-width: 992px) {
+      padding-inline: 48px;
+    }
   }
 }
 
-.nav-pill {
-    background: white;
-    border-radius: 48px;
-    padding: 8px 16px 8px 20px;
-    gap: 24px;
-   
-@media (min-width: 992px) {
-    padding: 8px 8px 8px 24px;
-  }
+// Shared text style for the brand, menu links and language link
+.nav-brand,
+.nav-links .nav-link,
+.lang-link {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.16px;
+  color: $headings-color;
 }
 
 .nav-brand {
-  gap: 6px;
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: -2%;
-  color: $black;
   white-space: nowrap;
 
   &:hover {
     text-decoration: none;
   }
 
-  &__mark {
-    flex-shrink: 0;
-  }
-
-  &__mark svg {
-    display: block;
-    width: 24px;
-    height: 16px;
+  @media (min-width: 992px) {
+    margin-right: 41px;
   }
 
   @media (max-width: 400px) {
@@ -125,24 +122,15 @@ a.btn {
 
 .nav-links {
   @media (min-width: 992px) {
-    gap: 8px;
+    gap: 28px;
     margin: 0;
-    color: $black;
-
-    .nav-link {
-      padding: 0 1rem;
-      color: $black;
-
-    }
   }
 }
 
-a.nav-link {
-  color: $black;
-  font-size: 1em;
-
+.nav-links a.nav-link {
   @media (max-width: 768px) {
     font-size: 3rem;
+    line-height: 1.2;
   }
 }
 
@@ -150,36 +138,8 @@ a.nav-link {
   gap: 12px;
 }
 
-.lang-badge {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 24px;
-  color: $black;
-  svg{
-  transform: scaleX(1); /* Taille de départ (invisible/aplati) */
-  transform-origin: center; /* Point d'ancrage de l'agrandissement */
-  transition: transform 0.3s ease-in-out; /* Durée et fluidité */
-}
-
-  &:hover {
-    text-decoration: none;
-}
-
-  &__icon {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  &__label {
-    position: relative;
-    font-size: 12px;
-    letter-spacing: -0.12px;
-  }
+.lang-link:hover {
+  text-decoration: underline;
 }
 
 @keyframes availability-pulse {
@@ -262,44 +222,81 @@ a.nav-link {
 
 // ************* PROJECTS SECTION **********
 
-.project-intro {
-  font-size: 24px;
-  line-height: 1.25;
-  letter-spacing: -1%;
-  margin-bottom: 0;
-  @media (max-width: 768px) {
-    font-size: 20px;
+.project-hero {
+  aspect-ratio: 1440 / 682;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 1.25em;
   }
 }
 
+.project-page {
+  @media (min-width: 992px) {
+    padding-inline: 48px;
+  }
+}
+
+.project-header {
+  padding-top: 40px;
+  row-gap: 24px;
+}
+
+.project-title {
+  font-size: clamp(40px, 4.45vw, 64px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: $black;
+  margin-bottom: 0;
+}
+
 .project-meta {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: $black;
 
-  &__row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    padding: 12px 0;
-    border-bottom: 1px solid rgba($black, .2);
-
-    &:first-child {
-      border-top: 1px solid rgba($black, .2);
-    }
+  @media (min-width: 992px) {
+    padding-top: 24px;
   }
 
   &__label {
-    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.25;
     letter-spacing: -0.14px;
+    margin-bottom: 4px;
   }
 
   &__value {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    a {
-      font-size: 14px;
-      letter-spacing: -0.14px;
+    line-height: 1.2;
+  }
+
+  &__link {
+    line-height: 1.25;
+    letter-spacing: -0.14px;
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
     }
+  }
+}
+
+.project-intro {
+  font-size: clamp(24px, 3.05vw, 44px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: $black;
+  margin: 48px 0 0;
+
+  @media (min-width: 992px) {
+    margin-top: 64px;
   }
 }
 

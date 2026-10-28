@@ -67,6 +67,22 @@ $container-padding-x: $grid-gutter-width;
 
 @font-face {
   font-family: 'ZTNature';
+  src: url('../fonts/ZTNature-ExtraBold.otf');
+  /* IE9 Compat Modes */
+  src: url('../fonts/ZTNature-ExtraBold.woff2') format('woff2'),
+    /* Modern Browsers */
+    url('../fonts/ZTNature-ExtraBold.woff') format('woff'),
+    /* Modern Browsers */
+    url('../fonts/ZTNature-ExtraBold.ttf') format('truetype');
+  /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: 800;
+  text-rendering: optimizeLegibility;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ZTNature';
   src: url('../fonts/ZTNature-Black.otf');
   /* IE9 Compat Modes */
   src: url('../fonts/ZTNature-Black.woff2') format('woff2'),

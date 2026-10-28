@@ -16,7 +16,7 @@ project_images :
 - 'beaulieu/beaulieu-accueil-mobile.jpg'
 
 
-intro : "Une marque française au regard libre, qui aime créer aux côtés d'artistes aux univers multiples. Pour mieux raconter son ADN, sa mission et son esthétique, voici la nouvelle plateforme e-commerce. Ce nouveau site transpire plus de maturité, à l'image de celle acquise par la marque avec les années. Il est aussi plus sobre, pour mieux laisser respirer les produits, qui évoluent et se réinventent à chaque collection."
+intro : "Depuis 1960, Beaulieu est un acteur de l’industrie alimentaire au Québec. Suite au rachat par une troisième génération d’associés, un nouveau branding s’est imposé pour marquer leur arrivée et rafraîchir l'image."
 
 link : 'https://beaulieufoods.com'
 
@@ -25,7 +25,7 @@ project_type:
 
 skills : 
 - Design
-- Code
+- Developpement
 - Identité
 
 tools : 
@@ -33,3 +33,6 @@ tools :
 - Wordpress
 
 ---
+
+
+L’objectif était de mieux présenter l’entreprise pour créer des contacts avec de nouveaux partenaires et clients.
