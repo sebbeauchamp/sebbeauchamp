@@ -1,0 +1,47 @@
+{{- /*
+"Continue d'explorer d'autres projets" — Figma 1516:748 + cards 1515:742 / 1516:760.
+
+Suggests the 2 projects that follow the current one in the homepage order,
+wrapping around to the start, so every project gets different neighbours.
+
+@context {page} . The current project page.
+*/ -}}
+{{- $all := where site.RegularPages "Type" "projects" }}
+{{- $after := slice }}
+{{- $before := slice }}
+{{- $seen := false }}
+{{- range $all }}
+  {{- if eq . $ }}
+    {{- $seen = true }}
+  {{- else if $seen }}
+    {{- $after = $after | append . }}
+  {{- else }}
+    {{- $before = $before | append . }}
+  {{- end }}
+{{- end }}
+{{- $suggestions := first 2 ($after | append $before) }}
+
+{{- with $suggestions }}
+<section class="more-projects" aria-labelledby="more-projects-title">
+  <h2 class="more-projects__title" id="more-projects-title">{{ i18n "moreProjects" }}</h2>
+
+  {{- range . }}
+  <a class="more-projects__card" href="{{ .RelPermalink }}">
+    <span class="more-projects__image">
+      <img src="../images/{{ .Params.imagepreview }}" alt="{{ .Title }}" loading="lazy" decoding="async" />
+    </span>
+    <span class="more-projects__name">{{ .Title }}</span>
+    {{- if or .Params.industry .Params.preview_description }}
+    <span class="more-projects__desc">
+      {{- with .Params.industry }}<span class="more-projects__industry">{{ . }}.</span> {{ end }}
+      {{- .Params.preview_description -}}
+    </span>
+    {{- end }}
+    {{- $tags := (.Params.skills | default slice) | append (.Params.project_type | default slice) }}
+    {{- with $tags }}
+    <span class="more-projects__tags">{{ delimit . " • " }}</span>
+    {{- end }}
+  </a>
+  {{- end }}
+</section>
+{{- end }}

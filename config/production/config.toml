@@ -4,14 +4,10 @@ baseurl = ""
 languageCode = "fr"
 DefaultContentLanguage = "fr"
 title = "Sébastien Beauchamp"
-theme = "sbdesigner"
+theme = "sebbeauchamp"
 disableLanguages = ["en"]
 
-disableKinds = ["taxonomyTerm"]
-
-[taxonomies]
-    category = "categories"
-    tag = "tags"
+disableKinds = ["taxonomy", "term"]
 
 [languages]
   [languages.fr]

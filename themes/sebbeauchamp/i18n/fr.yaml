@@ -6,6 +6,7 @@ previousPage: "Precédente"
 nextPage: "Suivante"
 themeInfo: Conçu avec {{ .hugo }} et {{ .yue }}
 
+contactCta: Contacte-moi # Mobile menu contact card button
 availabilityStatus: Disponible # Header availability badge
 footerHeading: Parle-moi de tes projets, on les rendra concrêts. # Footer heading
 newsletter: Infolettre # Footer link
@@ -15,3 +16,4 @@ cookieSettings: Cookies # Footer link for tarteaucitron
 404Title: 404 – Page introuvable
 404Message: Cette page n’est plus là… ou peut-être n’a-t-elle jamais existé.
 404HomeLinkMessage: Retour à la page d'accueil
+moreProjects: Continue d’explorer d’autres projets # Project page — suggested projects heading

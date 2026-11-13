@@ -1,0 +1,18 @@
+{{- /*
+Availability pill ("Disponible") — Figma 1481:326 / 1462:180 (dark surfaces),
+1489:460 (light variant, desktop header). Renders nothing when
+site.Params.available is false.
+
+@context {string} [variant] "light" for use on the beige page background.
+
+@example: {{ partial "status-pill.html" . }}
+@example: {{ partial "status-pill.html" (dict "variant" "light") }}
+*/ -}}
+{{- $variant := "" }}
+{{- if reflect.IsMap . }}{{ $variant = .variant | default "" }}{{ end }}
+{{- if site.Params.available }}
+<span class="status-pill{{ with $variant }} status-pill--{{ . }}{{ end }}">
+  <span class="status-pill__dot" aria-hidden="true"><img src="{{ "images/icons/available-dot.svg" | relURL }}" width="18" height="18" alt=""></span>
+  {{ i18n "availabilityStatus" }}
+</span>
+{{- end }}

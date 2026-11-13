@@ -1,0 +1,100 @@
+- generic [ref=f81e1]:
+  - banner [ref=f81e2]:
+    - generic [ref=f81e3]:
+      - generic [ref=f81e4]: Disponible
+      - navigation "Main navigation" [ref=f81e7]:
+        - generic [ref=f81e8]:
+          - link "Sébastien Beauchamp" [ref=f81e9] [cursor=pointer]:
+            - /url: /
+            - generic [ref=f81e10]:
+              - generic [ref=f81e11]: Sébastien
+              - generic [ref=f81e12]: Beauchamp
+          - generic [ref=f81e13]:
+            - list [ref=f81e14]:
+              - listitem [ref=f81e15]:
+                - link "Projets" [ref=f81e16] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=f81e17]:
+                - link "Info" [ref=f81e18] [cursor=pointer]:
+                  - /url: /a-propos/
+            - list [ref=f81e20]:
+              - listitem [ref=f81e21]:
+                - link "Contact" [ref=f81e22] [cursor=pointer]:
+                  - /url: /contact/
+      - link "English" [ref=f81e24] [cursor=pointer]:
+        - /url: /en/about/
+  - main [ref=f81e25]:
+    - generic [ref=f81e26]:
+      - generic [ref=f81e27]:
+        - paragraph [ref=f81e28]: Info
+        - heading "Le diable est dans les détails, et le génie aussi ! Un projet réfléchi coûte moins d’énergie et traverse mieux le temps. Les résultats suivent souvent assez naturellement." [level=1] [ref=f81e29]
+      - generic [ref=f81e31]:
+        - paragraph [ref=f81e33]: Je m’aligne sur vos objectifs en prenant en compte les enjeux esthétiques, techniques et stratégiques. Ce qui me motive, ce sont les projets engageants qui ont pour ambition de laisser une trace.
+        - generic [ref=f81e34]:
+          - heading "Services" [level=2] [ref=f81e35]
+          - list [ref=f81e36]:
+            - listitem [ref=f81e37]: Site vitrine
+            - listitem [ref=f81e38]: Ecommerce
+            - listitem [ref=f81e39]: Design de produits
+            - listitem [ref=f81e40]: Application
+            - listitem [ref=f81e41]: Design système
+            - listitem [ref=f81e42]: Identité de marque
+            - listitem [ref=f81e43]: Audit
+        - generic [ref=f81e44]:
+          - heading "Intérêts" [level=2] [ref=f81e45]
+          - list [ref=f81e46]:
+            - listitem [ref=f81e47]: Alimentation
+            - listitem [ref=f81e48]: Environnement
+            - listitem [ref=f81e49]: Santé
+            - listitem [ref=f81e50]: Sport
+            - listitem [ref=f81e51]: Art et culture
+            - listitem [ref=f81e52]: Urbanisme et architecture
+            - listitem [ref=f81e53]: Technologie et innovation
+  - contentinfo [ref=f81e54]:
+    - generic [ref=f81e55]:
+      - generic [ref=f81e56]:
+        - generic [ref=f81e57]: Disponible
+        - paragraph [ref=f81e59]: Parle-moi de tes projets, on les rendra concrêts.
+      - generic [ref=f81e60]:
+        - link "contact@sebastienbeauchamp.com" [ref=f81e61] [cursor=pointer]:
+          - /url: mailto:contact@sebastienbeauchamp.com
+          - text: contact@sebastienbeauchamp.com →
+        - list [ref=f81e62]:
+          - listitem [ref=f81e63]:
+            - link "Projets" [ref=f81e64] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=f81e65]:
+            - link "Info" [ref=f81e66] [cursor=pointer]:
+              - /url: /a-propos/
+          - listitem [ref=f81e67]:
+            - link "Contact" [ref=f81e68] [cursor=pointer]:
+              - /url: /contact/
+        - list [ref=f81e69]:
+          - listitem [ref=f81e70]:
+            - link "Linkedin" [ref=f81e71] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f81e72]:
+            - link "Dribbble" [ref=f81e73] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f81e74]:
+            - link "Instagram" [ref=f81e75] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f81e76]:
+            - link "Unsplash" [ref=f81e77] [cursor=pointer]:
+              - /url: "#"
+        - list [ref=f81e78]:
+          - listitem [ref=f81e79]:
+            - link "Infolettre" [ref=f81e80] [cursor=pointer]:
+              - /url: mailto:contact@sebastienbeauchamp.com?subject=Infolettre
+          - listitem [ref=f81e81]:
+            - link "Cookies" [ref=f81e82] [cursor=pointer]:
+              - /url: "#"
+      - paragraph [ref=f81e83]: ©2008-2026
+  - region "Panneau de gestion des cookies":
+    - heading "Panneau de gestion des cookies" [level=2] [ref=f81e84]
+    - text: ☐ ☐ ✛ ☑ ☐ ✛ ✛ ✛ ✛ ✛ ☐ ☐ ✛ ✛ ✛ ✛
+    - dialog "Panneau de gestion des cookies" [active] [ref=f81e85]:
+      - paragraph [ref=f81e86]: Ce site utilise des cookies et vous donne le contrôle sur ceux que vous souhaitez activer
+      - 'button "Cookies : Tout accepter" [ref=f81e87] [cursor=pointer]': ☐ Tout accepter
+      - 'button "Cookies : Tout refuser" [ref=f81e88] [cursor=pointer]': ☐ Tout refuser
+      - button "Personnaliser (fenêtre modale)" [ref=f81e89] [cursor=pointer]: Personnaliser

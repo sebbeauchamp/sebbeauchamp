@@ -3,25 +3,25 @@
 
 <div class="container-fluid project-page">
 
-  <div class="project-hero">
+  <!-- <div class="project-hero">
   <img loading="eager" decoding="async" fetchpriority="high" alt="{{ .Title }}"
     src="../images/{{ .Params.imagepreview }}" />
-</div>
+</div> -->
 
   <div class="row project-header">
     <div class="col-lg-6 col-12">
       <h1 class="project-title">{{ .Title }}</h1>
     </div>
 
-    {{ if .Params.description }}
-    <div class="col-lg-2 col-4 project-meta">
+    {{ if .Params.industry }}
+    <div class="col-lg-2 col-md-4 col-6 project-meta">
       <span class="project-meta__label">Secteur</span>
-      <span class="project-meta__value">{{ .Params.description }}</span>
+      <span class="project-meta__value">{{ .Params.industry }}</span>
     </div>
     {{ end }}
 
     {{ if or .Params.skills .Params.project_type }}
-    <div class="col-lg-2 col-4 project-meta">
+    <div class="col-lg-2 col-md-4 col-6 project-meta">
       <span class="project-meta__label">Services</span>
       {{ range .Params.skills }}<span class="project-meta__value">{{ . }}</span>{{ end }}
       {{ range .Params.project_type }}<span class="project-meta__value">{{ . }}</span>{{ end }}
@@ -29,7 +29,7 @@
     {{ end }}
 
     {{ if .Params.link }}
-    <div class="col-lg-2 col-4 project-meta">
+    <div class="col-lg-2 col-md-4 col-12 project-meta">
       <span class="project-meta__label">Lien</span>
       <a class="project-meta__value project-meta__link" href="{{ .Params.link }}" target="_blank" rel="noopener">{{ .Params.link | strings.TrimPrefix "https://" | strings.TrimPrefix "http://" | strings.TrimSuffix "/" }} ↗︎</a>
     </div>
@@ -49,6 +49,8 @@
     {{ end }}
   </div>
   {{ end }}
+
+  {{ partial "projects/more.html" . }}
 </div>
 
 {{ end }}

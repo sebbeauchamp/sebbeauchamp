@@ -1,6 +1,8 @@
 ---
 date: '2025-03-11'
 
+Draft: True
+
 title: 'Bo-Coq'
 imagepreview : 'bo-coq-preview.jpg'
 

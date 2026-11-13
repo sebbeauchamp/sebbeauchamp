@@ -1,0 +1,118 @@
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]: Disponible
+      - navigation "Main navigation" [ref=e7]:
+        - generic [ref=e8]:
+          - link "Sébastien Beauchamp" [ref=e9] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e10]:
+              - generic [ref=e11]: Sébastien
+              - generic [ref=e12]: Beauchamp
+          - generic [ref=e13]:
+            - list [ref=e14]:
+              - listitem [ref=e15]:
+                - link "Projets" [ref=e16] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=e17]:
+                - link "Info" [ref=e18] [cursor=pointer]:
+                  - /url: /info/
+            - list [ref=e20]:
+              - listitem [ref=e21]:
+                - link "Contact" [ref=e22] [cursor=pointer]:
+                  - /url: /contact/
+      - link "English" [ref=e24] [cursor=pointer]:
+        - /url: /en
+  - main [ref=e25]:
+    - generic [ref=e26]:
+      - generic [ref=e27]:
+        - heading "Olow" [level=1] [ref=e29]
+        - generic [ref=e30]:
+          - generic [ref=e31]: Secteur
+          - generic [ref=e32]: Mode durable
+        - generic [ref=e33]:
+          - generic [ref=e34]: Services
+          - generic [ref=e35]: Design
+          - generic [ref=e36]: Ecommerce
+        - generic [ref=e37]:
+          - generic [ref=e38]: Lien
+          - link "olow.fr ↗︎" [ref=e39] [cursor=pointer]:
+            - /url: https://olow.fr
+      - paragraph [ref=e40]: Une marque française au regard libre, qui aime créer aux côtés d'artistes aux univers multiples. Pour mieux raconter son ADN, sa mission et son esthétique, voici la nouvelle plateforme e-commerce. Ce nouveau site transpire plus de maturité, à l'image de celle acquise par la marque avec les années. Il est aussi plus sobre, pour mieux laisser respirer les produits, qui évoluent et se réinventent à chaque collection.
+      - generic [ref=e41]:
+        - figure [ref=e42]:
+          - img "olow/olow-accueil-desktop.jpg" [ref=e43]
+        - figure [ref=e44]:
+          - img "olow/olow-accueil-mobile.jpg" [ref=e45]
+        - figure [ref=e46]:
+          - img "olow/olow-mini-panier.jpg" [ref=e47]
+        - figure [ref=e48]:
+          - img "olow/olow-panier-desktop.jpg" [ref=e49]
+        - figure [ref=e50]:
+          - img "olow/olow-produit-desktop.jpg" [ref=e51]
+        - figure [ref=e52]:
+          - img "olow/olow-liste-mobile.jpg" [ref=e53]
+        - figure [ref=e54]:
+          - img "olow/olow-liste-desktop.jpg" [ref=e55]
+      - region "Continue d’explorer d’autres projets" [ref=e56]:
+        - heading "Continue d’explorer d’autres projets" [level=2] [ref=e57]
+        - link "Beaulieu Beaulieu Alimentation. Une troisième génération d’associés, un nouveau branding s’est imposé pour marquer leur arrivée et rafraîchir l'image. Design • Développement • Identité • Site vitrine" [ref=e58] [cursor=pointer]:
+          - /url: /projects/beaulieu-foods/
+          - img "Beaulieu" [ref=e60]
+          - generic [ref=e61]: Beaulieu
+          - generic [ref=e62]: Alimentation. Une troisième génération d’associés, un nouveau branding s’est imposé pour marquer leur arrivée et rafraîchir l'image.
+          - generic [ref=e63]: Design • Développement • Identité • Site vitrine
+        - link "Distillerie de Montréal Distillerie de Montréal Spiriteux. Installée dans le quartier Rosemont, en plein cœur de Montréal. Elle s’est dotée d’un nouveau site vitrine pour développer la marque localement et à l’international. Design • Site vitrine" [ref=e64] [cursor=pointer]:
+          - /url: /projects/distillerie-de-montreal/
+          - img "Distillerie de Montréal" [ref=e66]
+          - generic [ref=e67]: Distillerie de Montréal
+          - generic [ref=e68]: Spiriteux. Installée dans le quartier Rosemont, en plein cœur de Montréal. Elle s’est dotée d’un nouveau site vitrine pour développer la marque localement et à l’international.
+          - generic [ref=e69]: Design • Site vitrine
+  - contentinfo [ref=e70]:
+    - generic [ref=e71]:
+      - generic [ref=e72]:
+        - generic [ref=e73]: Disponible
+        - paragraph [ref=e75]: Parle-moi de tes projets, on les rendra concrêts.
+      - generic [ref=e76]:
+        - link "contact@sebastienbeauchamp.com" [ref=e77] [cursor=pointer]:
+          - /url: mailto:contact@sebastienbeauchamp.com
+          - text: contact@sebastienbeauchamp.com →
+        - list [ref=e78]:
+          - listitem [ref=e79]:
+            - link "Projets" [ref=e80] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e81]:
+            - link "Info" [ref=e82] [cursor=pointer]:
+              - /url: /info/
+          - listitem [ref=e83]:
+            - link "Contact" [ref=e84] [cursor=pointer]:
+              - /url: /contact/
+        - list [ref=e85]:
+          - listitem [ref=e86]:
+            - link "Linkedin" [ref=e87] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/sebbeauchamp/
+          - listitem [ref=e88]:
+            - link "Dribbble" [ref=e89] [cursor=pointer]:
+              - /url: https://dribbble.com/sebbeauchamp
+          - listitem [ref=e90]:
+            - link "Instagram" [ref=e91] [cursor=pointer]:
+              - /url: https://www.instagram.com/sebbeauchamp/
+          - listitem [ref=e92]:
+            - link "Unsplash" [ref=e93] [cursor=pointer]:
+              - /url: https://unsplash.com/fr/@sebbeauchamp
+        - list [ref=e94]:
+          - listitem [ref=e95]:
+            - link "Infolettre" [ref=e96] [cursor=pointer]:
+              - /url: mailto:contact@sebastienbeauchamp.com?subject=Infolettre
+          - listitem [ref=e97]:
+            - link "Cookies" [ref=e98] [cursor=pointer]:
+              - /url: "#"
+      - paragraph [ref=e99]: ©2008-2026
+  - region "Panneau de gestion des cookies":
+    - heading "Panneau de gestion des cookies" [level=2] [ref=e100]
+    - text: ☐ ☐ ✛ ☑ ☐ ✛ ✛ ✛ ✛ ✛ ☐ ☐ ✛ ✛ ✛ ✛
+    - dialog "Panneau de gestion des cookies" [active] [ref=e101]:
+      - paragraph [ref=e102]: Ce site utilise des cookies et vous donne le contrôle sur ceux que vous souhaitez activer
+      - 'button "Cookies : Tout accepter" [ref=e103] [cursor=pointer]': ☐ Tout accepter
+      - 'button "Cookies : Tout refuser" [ref=e104] [cursor=pointer]': ☐ Tout refuser
+      - button "Personnaliser (fenêtre modale)" [ref=e105] [cursor=pointer]: Personnaliser

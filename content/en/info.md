@@ -1,10 +1,9 @@
 ---
-overtitle: Painter and Draftsman
-title: Pioneer of Abstract Art and an Essential Figure of Artistic Modernity in Quebec.
-description: "Biography of André Jasmin (1922-2020), Montreal painter and pioneer of abstract art in Quebec. Student of Borduas and Pellan, professor at École des Beaux Arts de Montréal."
+title: Info
+description: "I align with your goals by taking aesthetic, technical and strategic stakes into account. What drives me are engaging projects that aim to leave a mark."
 date: 2024-06-27T23:14:15+08:00
 classpage: info
-slug: about
+slug: info
 ---
 <div class="justify-content-md-between d-flex flex-md-row flex-column py-2 py-md-4">
 <div class="col-md-4 col-12">

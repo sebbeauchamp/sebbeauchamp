@@ -9,6 +9,7 @@ previousPage: "Previous" # Page nav
 nextPage: "Next" # Page nav
 themeInfo: Built with {{ .hugo }} and {{ .yue }} # Footer
 
+contactCta: Contact me # Mobile menu contact card button
 availabilityStatus: Available # Header availability badge
 footerHeading: Tell me about your projects, let's make them real. # Footer heading
 newsletter: Newsletter # Footer link
@@ -18,3 +19,4 @@ cookieSettings: Cookies # Footer link for tarteaucitron
 404Title: 404 – Page Not Found
 404Message: This page is no longer here… or perhaps it never existed.
 404HomeLinkMessage: Back to home
+moreProjects: Keep exploring other projects # Project page — suggested projects heading

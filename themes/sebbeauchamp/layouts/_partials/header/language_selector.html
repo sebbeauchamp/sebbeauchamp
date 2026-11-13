@@ -2,7 +2,7 @@
 {{ if .IsTranslated -}}
 {{- /* link to translated page */ -}}
 {{ range .Translations -}}
-<li class="nav-item d-lg-none">
+<li class="nav-item nav-item--lang d-lg-none">
   <a class="nav-link" href="{{ .RelPermalink }}">{{ .Language.LanguageName }}</a>
 </li>
 {{ end -}}
@@ -10,7 +10,7 @@
 {{- /* link to home page */ -}}
 {{ range site.Languages -}}
 {{ if ne site.Language.Lang .Lang -}} {{- /* ignore current language */ -}}
-<li class="nav-item d-lg-none">
+<li class="nav-item nav-item--lang d-lg-none">
   <a class="nav-link" href="{{ .Lang | relURL }}">{{ .LanguageName }}</a>
 </li>
 {{ end -}}

@@ -11,7 +11,9 @@ project_images :
 - 'olow/olow-liste-mobile.jpg'
 - 'olow/olow-liste-desktop.jpg'
 
-description : 'Mode durable'
+preview_description : Une marque française au regard libre, qui aime créer aux côtés d'artistes aux univers multiples.
+
+industry : 'Mode durable'
 
 intro : "Une marque française au regard libre, qui aime créer aux côtés d'artistes aux univers multiples. Pour mieux raconter son ADN, sa mission et son esthétique, voici la nouvelle plateforme e-commerce. Ce nouveau site transpire plus de maturité, à l'image de celle acquise par la marque avec les années. Il est aussi plus sobre, pour mieux laisser respirer les produits, qui évoluent et se réinventent à chaque collection."
 

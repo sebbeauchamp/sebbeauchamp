@@ -20,7 +20,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="http://localhost:1313/a-propos/"
+                href="http://localhost:1313/info/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -43,19 +43,6 @@
   </url><url>
     <loc>http://localhost:1313/en/arts/</loc>
     <lastmod>2023-01-01T08:30:00-07:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/en/projects/</loc>
-    <lastmod>2023-01-01T08:30:00-07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="http://localhost:1313/projects/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/en/projects/"
-                />
   </url><url>
     <loc>http://localhost:1313/en/arts/07/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
@@ -176,29 +163,5 @@
   </url><url>
     <loc>http://localhost:1313/en/arts/10/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/en/categories/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="http://localhost:1313/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/en/categories/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/en/tags/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="http://localhost:1313/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/en/tags/"
-                />
   </url>
 </urlset>

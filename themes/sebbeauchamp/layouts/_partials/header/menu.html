@@ -1,28 +1,39 @@
 {{- /*
 Renders a menu for the given menu ID.
 
+Entries flagged with `params.cta = true` (e.g. Contact) are rendered as the
+yellow pill button. Use `cta` to choose which group to render:
+  - cta false (default): regular text links (Projets, Info)
+  - cta true: only the call-to-action entries
+
 @context {page} page The current page.
 @context {string} menuID The menu ID.
+@context {bool} [cta] Render only CTA entries (true) or only regular entries (false).
 
-@example: {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+@example: {{ partial "header/menu.html" (dict "menuID" "main" "page" .) }}
+@example: {{ partial "header/menu.html" (dict "menuID" "main" "page" . "cta" true) }}
 */}}
 
 {{- $page := .page }}
 {{- $menuID := .menuID }}
+{{- $cta := .cta | default false }}
 
 {{- with index site.Menus $menuID }}
-{{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
+{{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" . "cta" $cta) }}
 {{- end }}
 
 {{- define "partials/inline/menu/walk.html" }}
 {{- $page := .page }}
+{{- $cta := .cta }}
 {{- range .menuEntries }}
-{{- $attrs := dict "href" .URL }}
-{{- $attrs = merge $attrs (dict "class" "nav-link") }}
+{{- $isCta := eq (.Params.cta | default false) true }}
+{{- if eq $isCta $cta }}
+{{- $class := cond $isCta "nav-link nav-pill nav-pill--cta" "nav-link" }}
+{{- $attrs := dict "href" .URL "class" $class }}
 {{- if $page.IsMenuCurrent .Menu . }}
-{{- $attrs = merge $attrs (dict "class" "active, nav-link" "aria-current" "page") }}
-{{- else if $page.HasMenuCurrent .Menu .}}
-{{- $attrs = merge $attrs (dict "class" "nav-link" "aria-current" "true") }}
+{{- $attrs = merge $attrs (dict "class" (printf "%s active" $class) "aria-current" "page") }}
+{{- else if $page.HasMenuCurrent .Menu . }}
+{{- $attrs = merge $attrs (dict "aria-current" "true") }}
 {{- end }}
 {{- $name := .Name }}
 {{- with .Identifier }}
@@ -31,13 +42,13 @@ Renders a menu for the given menu ID.
 {{- end }}
 {{- end }}
 <li class="nav-item">
-  <a class="nav-link" {{- range $k, $v :=$attrs }} {{- with $v }} {{- printf " %s=%q" $k $v | safeHTMLAttr }} {{- end }}
-    {{- end -}}>{{ $name }}</a>
+  <a {{- range $k, $v := $attrs }} {{- with $v }} {{- printf " %s=%q" $k $v | safeHTMLAttr }} {{- end }} {{- end -}}>{{ $name }}</a>
   {{- with .Children }}
   <ul>
-    {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
+    {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" . "cta" $cta) }}
   </ul>
   {{- end }}
 </li>
+{{- end }}
 {{- end }}
 {{- end }}

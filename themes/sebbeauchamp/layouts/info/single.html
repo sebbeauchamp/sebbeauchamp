@@ -1,36 +1,56 @@
 {{ define "main" }}
+{{- /*
+Info page — Figma 1481:294.
+All copy comes from data/<lang>/site.json:
+  info_overtitle, info_title, info_description
+  about_service_title + about_service_1…n
+  about_interest_title + about_interest_1…n
+Numbered list keys are read in order until one is missing, so adding
+"about_service_8" etc. is enough to grow a list.
+*/ -}}
 
-<!-- I don't use this layout -->
+{{- /* data/<lang>/site.json → Data.<lang>.site; its own top-level key is also
+"site", so unwrap it (falls back to the file root if that wrapper is removed) */}}
+{{ $file := index site.Data site.Language.Lang "site" }}
+{{ with or $file.site $file }}
+{{ $site := . }}
+<div class="info-page">
 
-{{ if .Params.classpage }}
-<div class="{{ .Params.classpage }}">
+  {{- /* Hero: same type scale as the home hero (Figma 1481:295 / 1481:296) */}}
+  <section class="container home-hero info-hero">
+    {{- with .info_overtitle }}
+    <p class="home-hero__tagline">{{ . }}</p>
+    {{- end }}
+    <h1 class="home-hero__title">{{ .info_title }}</h1>
+  </section>
 
-  <div class="container my-5">
-    <div class="d-flex flex-column col-12 mb-5">
-      <h1 class="mt-5 pt-5">
-        {{ if .Params.overtitle }}
-        <small class="d-block fs-5 mb-2">{{ .Params.overtitle }}</small>
-        {{ end }}
-        <span class="d-block display-1">{{ .Title }}</span>
-      </h1>
+  <section class="container info-about">
+    <div class="row gy-5">
+      <div class="col-lg-5 col-12">
+        <p class="info-about__description">{{ .info_description }}</p>
+      </div>
+
+      {{- range $group := slice "service" "interest" }}
+      <div class="col-lg-2 col-md-3 col-6{{ if eq $group "service" }} offset-lg-2{{ end }}">
+        <h2 class="info-about__title">{{ index $site (printf "about_%s_title" $group) }}</h2>
+        <ul class="info-about__list list-unstyled">
+          {{- $done := false }}
+          {{- range $i := seq 50 }}
+          {{- if not $done }}
+          {{- with index $site (printf "about_%s_%d" $group $i) }}
+          <li>{{ . }}</li>
+          {{- else }}
+          {{- $done = true }}
+          {{- end }}
+          {{- end }}
+          {{- end }}
+        </ul>
+      </div>
+      {{- end }}
     </div>
-    <!-- <div class="d-flex flex-column col-md-7 col-12"> -->
-    <div class="d-flex flex-column col-12">
-      {{ .Content }}
-    </div>
+  </section>
 
-    <!-- Default in theme
-<h1>{{ .Title }}</h1>
-  {{ partial "page/author.html" . }}
-  {{ partial "main/dates.html" . }}
-  {{ partial "page/translation_list.html" . }}
-  {{ partial "page/toc.html" . }}
+</div>
+{{ end }}
 
-  {{ partial "page/terms.html" (dict "taxonomy" "tags" "page" .) }}
-  {{ partial "page/terms.html" (dict "taxonomy" "categories" "page" .) }}
-  {{ partial "page/page_nav.html" . }}
-  {{ partial "page/page-end.html" . }} -->
-
-    {{ end }}
-  </div>
-  {{ end }}
+{{ end }}

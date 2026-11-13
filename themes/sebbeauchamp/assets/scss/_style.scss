@@ -6,10 +6,11 @@ body{
   background-color: #EFEBE1;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
+  letter-spacing: -1%;
 }
 
 h1, .h1, h2, .h2 {
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: -3%;
 }
 
@@ -42,44 +43,90 @@ h5, .h5, h6, .h6 {
   }
 }
 
-nav {
-
-  .navbar-collapse.show {
-    height: 100vh
-  }
-}
-
 .navbar a,
 a.btn {
   text-decoration: none;
 }
 
-.navbar-expand-lg .navbar-nav .nav-link {
-  padding: 0;
-  margin: 0;
+// ************** HEADER (floating pill nav) ********
+// Figma: Sébastien Beauchamp - portfolio, node 1467:267
 
-  &:hover{
-    text-decoration: underline;
+$nav-ink: #0f0e0b;
+$nav-cta-bg: #ffd500;
+$nav-cta-border: #e5bf00;
+$nav-pill-border: #78766d;
+
+// Sticky wrapper (<header class="header"> in baseof.html).
+// app.js toggles:
+//   .is-scrolled — page is scrolled: nav sits 16px from the top
+//   .is-hidden   — user is scrolling down: nav slides out of view
+// The blur lives only on .site-header__inner (the white pill), not full width.
+.header {
+  --header-y: 0px;
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  transform: translateY(var(--header-y));
+  transition: transform 400ms cubic-bezier(0.32, 0.72, 0, 1);
+
+  &.is-scrolled {
+    // Desktop rests 24px from the top; pull it up to 16px once scrolled
+    @media (min-width: 641px) {
+      --header-y: -8px;
+    }
+  }
+
+  // Extra 24px so the pill's drop shadow leaves the viewport too
+  &.is-hidden {
+    --header-y: calc(-100% - 24px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
   }
 }
 
-.navbar-brand{
-  font-size: 1em;
-  line-height: 125%;
-  font-weight: 700;
-  letter-spacing: -2%;
-}
-.mobile-nav-open {
-  font-size: 16px;
-  line-height: 125%;
-  letter-spacing: -2%;
-}
-
 .site-header {
-  padding: 24px 0;
+  position: relative;
+  padding: 24px 16px;
+
+  // Desktop — Figma 1489:406: Disponible | floating bar (centered) | English
+  @media (min-width: 992px) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 661px) minmax(0, 1fr);
+    align-items: center;
+    column-gap: 16px;
+    padding: 24px 48px;
+  }
 
   @media (max-width: 640px) {
-    padding: 16px 0;
+    padding: 16px;
+  }
+
+  // Side items sit on the page background, not on the white bar: fade them
+  // out once the page scrolls so they never float over content
+  &__side {
+    align-items: center;
+    transition: opacity 300ms var(--ease-out), visibility 300ms;
+
+    &--end {
+      justify-content: flex-end;
+    }
+
+    .is-scrolled & {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  // Mobile: reserve only the closed bar's height (60px + padding) so the
+  // open menu panel overflows on top of the page instead of pushing it down
+  @media (max-width: 991.98px) {
+    height: 108px;
+  }
+
+  @media (max-width: 640px) {
+    height: 92px;
   }
 
   .navbar {
@@ -87,96 +134,296 @@ a.btn {
   }
 
   &__inner {
-    @media (min-width: 992px) {
-      padding-inline: 48px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 661px;
+    min-height: 56px;
+    margin-inline: auto;
+    padding: 11px 12px 11px 15px; // 12/16 minus the 1px border
+    border: 1px solid #fff;
+    border-radius: 28px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, .88) 0%, rgba(255, 255, 255, .64) 100%);
+    box-shadow: 0 2px 24px 0 rgba(255, 255, 255, .64), 0 12px 24px 0 rgba(0, 0, 0, .08);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+
+    // Mobile — Figma 1489:469 (closed, 343×60) / 1489:470 (open panel, 343×486)
+    @media (max-width: 991.98px) {
+      min-height: 60px;
+      padding: 13px 15px; // pills 14px / logo + Menu 16px from edge, minus 1px border
+
+      &:has(.navbar-toggler[aria-expanded="true"]) {
+        padding: 13px 15px 7px; // same top row as closed, card 8px from bottom
+        // Keep the panel within the viewport on short screens
+        max-height: calc(100dvh - 32px);
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        // Same frosted white as the closed bar, with a stronger blur so the
+        // page underneath stays soft while the panel overlays it
+        -webkit-backdrop-filter: blur(24px);
+        backdrop-filter: blur(24px);
+      }
+
+      .navbar-collapse {
+        flex-basis: 100%;
+      }
     }
   }
 }
 
-// Shared text style for the brand, menu links and language link
-.nav-brand,
-.nav-links .nav-link,
-.lang-link {
-  font-size: 16px;
+// Brand: yellow globe + two-line name, 8px apart — Figma 1489:452 / 1489:447
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
   font-weight: 700;
   line-height: 1;
-  letter-spacing: -0.16px;
-  color: $headings-color;
-}
-
-.nav-brand {
+  letter-spacing: -0.42px;
+  text-transform: uppercase;
   white-space: nowrap;
+  color: $nav-ink;
 
   &:hover {
     text-decoration: none;
+    color: $nav-ink;
   }
 
   @media (min-width: 992px) {
-    margin-right: 41px;
+    margin-right: 42px;
   }
 
-  @media (max-width: 400px) {
-    font-size: 14px;
+  &__logo {
+    flex-shrink: 0;
+    display: block;
   }
+
+  &__name {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+// "Menu" toggler is an outlined pill (shares .nav-pill); grey fill while open
+// — Figma 1489:532 (closed) / 1489:530 (open)
+.navbar-toggler.nav-pill {
+  padding: 8px 16px;
+  border: 1px solid $nav-pill-border;
+  border-radius: 30px;
+  background-color: transparent;
+  font-size: 14px;
+  line-height: 1;
+
+  &[aria-expanded="true"] {
+    background-color: #f2f2f2;
+  }
+}
+
+.mobile-nav-open {
+  display: block;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: -0.14px;
+  color: $nav-ink;
 }
 
 .nav-links {
   @media (min-width: 992px) {
-    gap: 28px;
+    gap: 24px;
     margin: 0;
+  }
+
+  // Mobile open: Projets / Info / English stacked 56px apart (40px line + 16px)
+  @media (max-width: 991.98px) {
+    gap: 16px;
+    padding: 24px 0 16px;
   }
 }
 
-.nav-links a.nav-link {
-  @media (max-width: 768px) {
-    font-size: 3rem;
-    line-height: 1.2;
+.navbar-expand-lg .navbar-nav .nav-link,
+.nav-links .nav-link {
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.25;
+  color: $nav-ink;
+
+  &:hover,
+  &.active {
+    // text-decoration: underline;
+    // text-underline-offset: 3px;
+    // color: $black;
+  }
+
+}
+
+@media (max-width: 991.98px) {
+  .navbar-expand-lg .nav-links .nav-link {
+    font-size: 32px;
+    line-height: 1.25;
+    letter-spacing: -0.64px;
+  }
+
+  .navbar-expand-lg .nav-links .nav-item--lang .nav-link {
+    letter-spacing: -0.32px;
   }
 }
 
 .nav-utils {
-  gap: 12px;
+  gap: 6px;
 }
 
-.lang-link:hover {
-  text-decoration: underline;
+// Shared pill (language switch + CTA)
+.nav-pill,
+.navbar-expand-lg .navbar-nav .nav-link.nav-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border: 1px solid $nav-pill-border;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.14px;
+  white-space: nowrap;
+  color: $nav-ink;
+  transition: background-color .15s ease-in-out, border-color .15s ease-in-out;
+
+  &:hover,
+  &.active {
+    text-decoration: none;
+    color: $nav-ink;
+    background-color: rgba(15, 14, 11, .06);
+  }
 }
 
+.navbar-expand-lg .navbar-nav .nav-link.nav-pill--cta,
+.nav-pill--cta {
+  background-color: $nav-cta-bg;
+  border-color: $nav-cta-border;
+
+  &:hover,
+  &.active {
+    // background-color: darken($nav-cta-bg, 5%);
+    border-color: darken($nav-cta-border, 8%);
+      background-color: $nav-cta-bg;
+    // border-color: $nav-ink;
+  }
+}
+
+// Mobile bar: Contact pill sits 8px left of "Menu", open or closed (Figma 1489:498 / 1489:519)
+.nav-cta--mobile {
+  margin-left: auto;
+  margin-right: 8px;
+}
+
+// Desktop language switch: plain text on the page background — Figma 1489:451
+.lang-link {
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: -0.14px;
+  white-space: nowrap;
+  color: $nav-ink;
+  text-decoration: none;
+
+  &:hover {
+    color: $nav-ink;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+
+// Mobile open menu: dark contact card — Figma 1489:478 / 480 / 479 / 500
+.nav-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  margin-inline: -8px; // card is inset 8px from the panel edge (15px padding + 1px border)
+  padding: 24px 16px;
+  border-radius: 20px;
+  background-color: $nav-ink;
+
+  &__title {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.64px;
+    color: #fff;
+  }
+}
+
+// Attention loop: one pulse in the first ~30% of a 6s cycle, then rest
 @keyframes availability-pulse {
   0% {
     transform: scale(1);
     opacity: .6;
   }
+  30%,
   100% {
     transform: scale(2.8);
     opacity: 0;
   }
 }
 
-.availability-badge {
+// "Disponible" pill (partial status-pill.html) — Figma 1481:326, on dark surfaces
+.status-pill {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 12px;
-  letter-spacing: -0.12px;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: 150px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .12) 0%, rgba(255, 255, 255, .06) 100%);
+  font-size: 14px;
+  line-height: 1;
   white-space: nowrap;
+  color: #f1eee4;
+  text-shadow: 0 1px 4px rgba(5, 153, 91, .4);
 
+  // 12px slot; the 18×18 SVG includes its glow and overflows the slot like in Figma
   &__dot {
     position: relative;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #34c759;
-    box-shadow: 0 0 0 4px rgba(52, 199, 89, .15);
+    flex-shrink: 0;
+    width: 12px;
+    height: 12px;
 
+    img {
+      position: absolute;
+      z-index: 1;
+      top: -2px;
+      left: -3px;
+    }
+
+    // Pulse ring behind the 6px dot (SVG circle r=3 centered at 9,8 → slot 6,6)
     &::after {
       content: "";
       position: absolute;
-      inset: 0;
+      top: 3px;
+      left: 3px;
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
-      background: #34c759;
-      animation: availability-pulse 1.8s ease-out infinite;
+      background: #05995b;
+      opacity: 0;
+      animation: availability-pulse 6s var(--ease-out) 2.5s infinite;
     }
+  }
+
+  // On the beige page background (desktop header) — Figma 1489:460
+  &--light {
+    padding: 4px 8px;
+    border-color: rgba(15, 14, 11, .16);
+    background: rgba(15, 14, 11, .04);
+    line-height: 20px;
+    color: $nav-ink;
+    text-shadow: none;
   }
 }
 
@@ -184,30 +431,132 @@ a.btn {
 
 // ************** HOMEPAGE ********
 
-.home{
-  h1{
+// Motion tokens (emilkowalski/skills)
+:root {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  // Vertical space between page sections: 64px at 375px wide, scaling
+  // linearly to 120px at 1440px wide, clamped outside that range
+  --section-space: clamp(64px, calc(44.28px + 5.258vw), 120px);
+}
 
-    font-size: clamp(1.75rem, 5vw, 5rem);
-    padding:16vw 0px 12vw;
-    @media (min-width: 992px) {
-    padding:240px 0px 80px;
-  }
+// Projects grid → footer
+.home {
+  padding-bottom: var(--section-space);
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+    filter: blur(4px);
   }
 }
+
+@keyframes fade-in {
+  from { opacity: 0; }
+}
+
+// Entrance: tagline leads, title follows, then the first row of projects
+.home-hero__tagline,
+.home-hero__title {
+  animation: rise-in 700ms var(--ease-out) both;
+}
+.home-hero__title { animation-delay: 90ms; }
+
+.work > div:nth-child(-n+3) { animation: rise-in 600ms var(--ease-out) both; }
+.work > div:nth-child(1) { animation-delay: 220ms; }
+.work > div:nth-child(2) { animation-delay: 300ms; }
+.work > div:nth-child(3) { animation-delay: 360ms; }
+
+// Card feedback: image zoom on real-pointer hover, subtle press
+.work > div {
+  transition: transform 160ms var(--ease-out);
+
+  &:active { transform: scale(0.98); }
+}
+.work img { transition: transform 500ms var(--ease-out); }
+
+@media (hover: hover) and (pointer: fine) {
+  .work > div:hover img { transform: scale(1.03); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero__tagline,
+  .home-hero__title,
+  .work > div:nth-child(-n+3) {
+    animation-name: fade-in;
+    animation-duration: 300ms;
+  }
+  .work > div,
+  .work img {
+    transition: none;
+  }
+  .work > div:active,
+  .work > div:hover img {
+    transform: none;
+  }
+  .status-pill__dot::after {
+    animation: none;
+  }
+}
+
+// Hero — Figma nodes 1462:141 (tagline) + 1462:142 (title)
+.home-hero {
+  padding-top: 12vw;
+  padding-bottom: var(--section-space); // hero → projects grid
+
+  // Figma tagline sits at y=240 in the frame; the sticky header takes 104px
+  @media (min-width: 992px) {
+    padding-top: 160px;
+  }
+
+  &__tagline {
+    margin: 0 0 8px;
+    font-size: clamp(16px, 1.75vw, 24px);
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -2%;
+    color: $nav-pill-border; // #78766d
+  }
+
+  &__title {
+    margin: 0;
+    font-size: clamp(2em, 5.25vw, 80px);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -3%;
+    color: $nav-ink;
+  }
+}
+
+.img-work {
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    border-radius: 0.5em;
+    isolation: isolate; // keeps Safari clipping the scaled image to the radius
+}
+
 .work img{
-  border-radius: 6px;
+    border-radius: 0.5em;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
-.tag{
-  background-color: white;
+// Project tags — Figma node 1462:164 ("Design • Ecommerce")
+.tag {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
   white-space: nowrap;
-  border-radius: 100px;
-  font-size: 12px;
-  letter-spacing: -1%;
-  line-height: 120%;
-  text-transform: uppercase;
-  padding: 0.25rem 0.5rem;
-  color: #636965;
+  color: #000;
+
+  // Bullet separator between consecutive tags
+  & + &::before {
+    content: "•";
+    margin-inline: 0.25em;
+  }
 }
 
 .home-about{
@@ -231,7 +580,7 @@ a.btn {
     height: 100%;
     object-fit: cover;
     display: block;
-    border-radius: 1.25em;
+    border-radius: 1em;
   }
 }
 
@@ -248,9 +597,8 @@ a.btn {
 
 .project-title {
   font-size: clamp(40px, 4.45vw, 64px);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1;
-  letter-spacing: -0.03em;
   color: $black;
   margin-bottom: 0;
 }
@@ -337,7 +685,7 @@ a.btn {
       height: 100%;
       object-fit: cover;
       display: block;
-      border-radius: 1.25em;
+      border-radius: 0.5em;
     }
 
     // 3rd, 4th and 5th image of every group of 5 sit three across
@@ -370,34 +718,57 @@ a.btn {
 }
 
 
-.info {
+// ************* INFO PAGE — Figma 1481:294 **********
+// Hero reuses .home-hero (same tagline/title specs); only the gap below differs.
 
-  p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
+$info-text: #161d19;
 
-    @media (max-width: 768px) {
-      font-size: 1.25rem;
-      margin-bottom: 1.5rem;
-    }
+.info-page {
+  padding-bottom: var(--section-space); // lists → footer (120px at 1440)
+}
+
+// Title → description: 80px at 1440, 48px on small screens
+.info-hero {
+  padding-bottom: clamp(48px, 5.556vw, 80px);
+}
+
+.info-about {
+  animation: rise-in 600ms var(--ease-out) 220ms both;
+
+  // Figma 1484:395
+  &__description {
+    max-width: 546px;
+    margin: 0;
+    font-size: clamp(20px, 1.667vw, 24px);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: #000;
   }
 
-  blockquote {
-    display: flex;
+  // Figma 1484:391 / 1484:392
+  &__title {
+    margin: 0 0 8px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    color: $info-text;
+  }
 
-    p {
-      margin-top: 1.5rem;
-      font-size: 4rem;
-      line-height: 1.25;
-      border-top: solid 4px black;
-      border-bottom: solid 4px black;
-      padding: 2rem 0;
+  // Figma 1484:393 / 1484:394
+  &__list {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    color: $info-text;
+  }
+}
 
-      @media (max-width: 768px) {
-        font-size: 1.75rem;
-        margin-bottom: 1.5rem;
-      }
-    }
+@media (prefers-reduced-motion: reduce) {
+  .info-about {
+    animation-name: fade-in;
+    animation-duration: 300ms;
   }
 }
 
@@ -437,6 +808,122 @@ a.btn {
     margin: 20px 0 0;
     padding-top: 20px;
     padding-bottom: 0px;
+  }
+}
+
+// ************** MORE PROJECTS — Figma 1516:748 / 1515:742 / 1516:760 ********
+// Desktop (1440 frame): heading + 2 cards in three 432px columns, 24px gaps.
+.project-gallery:has(+ .more-projects) {
+  margin-bottom: 0; // the section below owns the spacing
+}
+
+.more-projects {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 48px 24px;
+  align-items: start;
+  padding-block: var(--section-space);
+
+  // Tablet: heading on its own row, cards two across
+  @media (max-width: 991.98px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    .more-projects__title {
+      grid-column: 1 / -1;
+    }
+  }
+
+  // Phone: cards stacked
+  @media (max-width: 575.98px) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  &__title {
+    margin: 0;
+    font-size: clamp(32px, 3.06vw, 44px);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: #000;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    color: inherit;
+    text-decoration: none;
+    transition: transform 160ms var(--ease-out);
+
+    &:hover {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+
+  &__image {
+    display: block;
+    aspect-ratio: 4 / 5; // 432 × 540
+    overflow: hidden;
+    border-radius: 8px;
+    isolation: isolate;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 500ms var(--ease-out);
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &__card:hover img {
+      transform: scale(1.03);
+    }
+  }
+
+  &__name {
+    margin-top: 16px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    color: $nav-ink; // #0f0e0b
+  }
+
+  &__desc {
+    margin-top: 8px;
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    color: #636965;
+  }
+
+  &__industry {
+    color: #161d19;
+  }
+
+  &__tags {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #2c2921;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &__card,
+    &__image img {
+      transition: none;
+    }
+
+    &__card:active,
+    &__card:hover img {
+      transform: none;
+    }
   }
 }
 
@@ -512,16 +999,15 @@ a {
   position: relative;
   // padding: 0.125em 0;
   color: black;
-  text-decoration: none;
-  text-underline-offset: 0px;
-  text-decoration-thickness: 0px;
+  // Underline is always drawn but transparent, so it can fade in AND out
+  text-decoration: underline transparent;
+  text-underline-offset: 0.25rem;
+  text-decoration-thickness: 0.15em;
   overflow: hidden;
+  transition: text-decoration-color 150ms ease;
 
   &:hover {
-    text-decoration: underline;
-    text-underline-offset: 0.25rem;
-    text-decoration-thickness: 0.15em;
-    transition: text-decoration 300ms ease;
+    text-decoration-color: currentColor;
   }
 }
 
@@ -529,68 +1015,77 @@ a {
   position: static;
 }
 
+// ************** FOOTER — Figma 1481:318 ********
+// Desktop measures from the 1440 frame: 48px side padding, a 6-column grid
+// (204px cols, 24px gaps) puts the three link columns at x=732 / 960 / 1188.
 .footer__inner {
-  background: white;
-  border-radius: 16px 16px 0 0;
-  padding: 64px 0 48px;
+  padding: 80px 48px 33px;
+  border-radius: 20px 20px 0 0;
+  background: $nav-ink; // #0f0e0b
+  color: #f1eee4;
+
+  @media (max-width: 991.98px) {
+    padding: 64px 24px 32px;
+  }
 
   @media (max-width: 640px) {
-    padding: 40px 0 32px;
+    padding: 48px 16px 24px;
+  }
+
+  a {
+    color: inherit;
   }
 }
 
-.footer__availability {
-  margin-bottom: 24px;
-}
-
-.footer__main {
+.footer__intro {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 40px 24px;
-}
-
-.footer-content {
-  flex: 1 1 480px;
-  max-width: 560px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
 }
 
 .footer__heading {
-  font-weight: 900;
-  letter-spacing: -0.03em;
-  line-height: 1.05;
-  font-size: clamp(28px, 3.2vw, 44px);
-  margin-bottom: 16px;
+  max-width: 546px;
+  margin: 0;
+  font-size: clamp(32px, 3.06vw, 44px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  column-gap: 24px;
+  margin-top: 16px;
+  font-size: 14px;
+  line-height: 1.5;
+
+  // Tablet/mobile: email on its own row, link columns below
+  @media (max-width: 991.98px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    row-gap: 40px;
+  }
 }
 
 .footer__email {
-  display: inline-block;
-   font-size: 16px;
-    letter-spacing: -2%;
+  grid-column: 1 / span 3;
+  justify-self: start;
+  align-self: start;
 }
 
 .footer__links {
-  flex: 0 0 auto;
   margin: 0;
-
-  li:not(:last-child) {
-    margin-bottom: 4px;
-  }
-
-  .nav-link,
-  a {
-    padding: 0;
-    font-size: 16px;
-    letter-spacing: -2%;
-  }
-}
-
-.footer__meta {
-  flex: 0 0 auto;
 }
 
 .footer__copyright {
-  margin: 80px 0 0;
-  font-size: 12px;
-  letter-spacing: -2%;
+  margin: 38px 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+  opacity: .5;
+
+  @media (max-width: 991.98px) {
+    margin-top: 48px;
+  }
 }

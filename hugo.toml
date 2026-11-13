@@ -1,12 +1,13 @@
 languageCode = 'fr'
 
 theme = "sebbeauchamp"
-baseURL = 'https://andrejasmin.com'
+baseURL = 'https://sebastienbeauchamp.com'
 defaultContentLanguage = "fr"
 defaultContentLanguageInSubdir = false
 enableGitInfo = false
 enableEmoji = true
 enableRobotsTXT = true
+disableKinds = ["taxonomy", "term"]
 
 
 
@@ -21,19 +22,19 @@ email = "contact@sebastienbeauchamp.com"
 
 [[params.social]]
 name = "Linkedin"
-url = "#"
+url = "https://www.linkedin.com/in/sebbeauchamp/"
 
 [[params.social]]
 name = "Dribbble"
-url = "#"
+url = "https://dribbble.com/sebbeauchamp"
 
 [[params.social]]
 name = "Instagram"
-url = "#"
+url = "https://www.instagram.com/sebbeauchamp/"
 
 [[params.social]]
 name = "Unsplash"
-url = "#"
+url = "https://unsplash.com/fr/@sebbeauchamp"
 
 [frontmatter]
 lastmod = [ "lastmod", ":default" ]
@@ -50,7 +51,7 @@ dataDir = 'data/en'
 languageCode = "en"
 languageDirection = "ltr"
 languageName = "English"
-title = "André Jasmin"
+title = "Sébastien Beauchamp"
 weight = 2
 
 #[[languages.en.menus.main]]
@@ -60,7 +61,7 @@ weight = 2
 
 [[languages.en.menus.main]]
 name = "Projects"
-pageRef = "/projects"
+pageRef = "/"
 weight = 20
 
 [[languages.en.menus.main]]
@@ -72,6 +73,8 @@ weight = 40
 name = "Contact"
 pageRef = "/contact"
 weight = 50
+[languages.en.menus.main.params]
+cta = true
 
   [languages.en.params]
   dateFormat = "Jan 02, 2006"
@@ -89,7 +92,7 @@ dataDir = 'data/fr'
 languageCode = "fr"
 languageDirection = "ltr"
 languageName = "Français"
-title = "André Jasmin"
+title = "Sébastien Beauchamp"
 weight = 1
 
 #[[languages.fr.menus.main]]
@@ -99,7 +102,7 @@ weight = 1
 
 [[languages.fr.menus.main]]
 name = "Projets"
-pageRef = "/projects"
+pageRef = "/"
 weight = 20
 
 [[languages.fr.menus.main]]
@@ -111,6 +114,8 @@ weight = 40
 name = "Contact"
 pageRef = "/contact"
 weight = 50
+[languages.fr.menus.main.params]
+cta = true
 
 [languages.fr.params.footer.copyright]
 yearStart = 2008

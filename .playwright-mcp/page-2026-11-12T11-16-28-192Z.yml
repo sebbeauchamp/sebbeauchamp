@@ -1,0 +1,139 @@
+- generic [ref=f10e1]:
+  - banner [ref=f10e2]:
+    - navigation "Main navigation" [ref=f10e4]:
+      - generic [ref=f10e5]:
+        - link "Sébastien Beauchamp" [ref=f10e6] [cursor=pointer]:
+          - /url: /
+          - generic [ref=f10e7]: Sébastien
+          - generic [ref=f10e8]: Beauchamp
+        - generic [ref=f10e9]:
+          - list [ref=f10e10]:
+            - listitem [ref=f10e11]:
+              - link "Projets" [ref=f10e12] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f10e13]:
+              - link "Info" [ref=f10e14] [cursor=pointer]:
+                - /url: /a-propos/
+          - generic [ref=f10e15]:
+            - link "Switch to English" [ref=f10e16] [cursor=pointer]:
+              - /url: /en/
+              - text: EN
+            - list [ref=f10e17]:
+              - listitem [ref=f10e18]:
+                - link "Contact" [ref=f10e19] [cursor=pointer]:
+                  - /url: /contact/
+  - main [ref=f10e20]:
+    - generic [ref=f10e21]:
+      - generic [ref=f10e22]:
+        - paragraph [ref=f10e23]: Comprendre, réfléchir, réaliser.
+        - heading "Designer depuis 2008, je conçois des identités et des expériences numériques." [level=1] [ref=f10e24]
+      - generic [ref=f10e28]:
+        - generic [ref=f10e29]:
+          - img "Beaulieu" [ref=f10e31]
+          - generic [ref=f10e32]:
+            - heading [level=2] [ref=f10e33]:
+              - link "Beaulieu" [ref=f10e34] [cursor=pointer]:
+                - /url: /projects/beaulieu-foods/
+            - paragraph [ref=f10e35]: Alimentation. Une troisième génération d’associés, un nouveau branding s’est imposé pour marquer leur arrivée et rafraîchir l'image.
+            - generic [ref=f10e36]:
+              - generic [ref=f10e37]: Identité
+              - generic [ref=f10e38]: •Site vitrine
+              - generic [ref=f10e39]: •Design
+              - generic [ref=f10e40]: •Développement
+        - generic [ref=f10e41]:
+          - img "Distillerie de Montréal" [ref=f10e43]
+          - generic [ref=f10e44]:
+            - heading [level=2] [ref=f10e45]:
+              - link "Distillerie de Montréal" [ref=f10e46] [cursor=pointer]:
+                - /url: /projects/distillerie-de-montreal/
+            - paragraph [ref=f10e47]: Spiriteux. Installée dans le quartier Rosemont, en plein cœur de Montréal. Elle s’est dotée d’un nouveau site vitrine pour développer la marque localement et à l’international.
+            - generic [ref=f10e48]:
+              - generic [ref=f10e49]: Site vitrine
+              - generic [ref=f10e50]: •Design
+        - generic [ref=f10e51]:
+          - img "Olow" [ref=f10e53]
+          - generic [ref=f10e54]:
+            - heading [level=2] [ref=f10e55]:
+              - link "Olow" [ref=f10e56] [cursor=pointer]:
+                - /url: /projects/olow/
+            - paragraph [ref=f10e57]: Mode durable. Une marque française au regard libre, qui aime créer aux côtés d'artistes aux univers multiples.
+            - generic [ref=f10e58]:
+              - generic [ref=f10e59]: Ecommerce
+              - generic [ref=f10e60]: •Design
+        - generic [ref=f10e61]:
+          - img "Tous Ergo" [ref=f10e63]
+          - generic [ref=f10e64]:
+            - heading [level=2] [ref=f10e65]:
+              - link "Tous Ergo" [ref=f10e66] [cursor=pointer]:
+                - /url: /projects/tous-ergo/
+            - paragraph [ref=f10e67]: .
+            - generic [ref=f10e68]:
+              - generic [ref=f10e69]: Site vitrine
+              - generic [ref=f10e70]: •Design
+              - generic [ref=f10e71]: •Developpement
+        - generic [ref=f10e72]:
+          - img "Pro-Nutrition" [ref=f10e74]
+          - generic [ref=f10e75]:
+            - heading [level=2] [ref=f10e76]:
+              - link "Pro-Nutrition" [ref=f10e77] [cursor=pointer]:
+                - /url: /projects/pro-nutrition/
+            - paragraph [ref=f10e78]: .
+            - generic [ref=f10e79]:
+              - generic [ref=f10e80]: Site vitrine
+              - generic [ref=f10e81]: •Design
+              - generic [ref=f10e82]: •Developpement
+        - generic [ref=f10e83]:
+          - img "Bo-Coq" [ref=f10e85]
+          - generic [ref=f10e86]:
+            - heading [level=2] [ref=f10e87]:
+              - link "Bo-Coq" [ref=f10e88] [cursor=pointer]:
+                - /url: /projects/bo-coq/
+            - paragraph [ref=f10e89]: .
+            - generic [ref=f10e90]:
+              - generic [ref=f10e91]: Ecommerce
+              - generic [ref=f10e92]: •Design
+              - generic [ref=f10e93]: •Developpement
+  - contentinfo [ref=f10e94]:
+    - generic [ref=f10e96]:
+      - generic [ref=f10e97]: Disponible
+      - generic [ref=f10e99]:
+        - generic [ref=f10e100]:
+          - paragraph [ref=f10e101]: Parle-moi de tes projets, on les rendra concrêts.
+          - link "contact@sebastienbeauchamp.com" [ref=f10e102] [cursor=pointer]:
+            - /url: mailto:contact@sebastienbeauchamp.com
+        - list [ref=f10e103]:
+          - listitem [ref=f10e104]:
+            - link "Projets" [ref=f10e105] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=f10e106]:
+            - link "Info" [ref=f10e107] [cursor=pointer]:
+              - /url: /a-propos/
+        - list [ref=f10e108]:
+          - listitem [ref=f10e109]:
+            - link "Linkedin" [ref=f10e110] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f10e111]:
+            - link "Dribbble" [ref=f10e112] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f10e113]:
+            - link "Instagram" [ref=f10e114] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f10e115]:
+            - link "Unsplash" [ref=f10e116] [cursor=pointer]:
+              - /url: "#"
+        - list [ref=f10e118]:
+          - listitem [ref=f10e119]:
+            - link "Infolettre" [ref=f10e120] [cursor=pointer]:
+              - /url: mailto:contact@sebastienbeauchamp.com?subject=Infolettre
+          - listitem [ref=f10e121]:
+            - link "Cookies" [ref=f10e122] [cursor=pointer]:
+              - /url: "#"
+      - paragraph [ref=f10e123]: © Sébastien Beauchamp • 2008-2026
+  - region "Panneau de gestion des cookies":
+    - heading "Panneau de gestion des cookies" [level=2] [ref=f10e124]
+    - text: ☐ ☐ ✛ ☑ ☐ ✛ ✛ ✛ ✛ ✛ ☐ ☐ ✛ ✛ ✛ ✛
+    - dialog "Panneau de gestion des cookies" [active] [ref=f10e125]:
+      - paragraph [ref=f10e126]: Ce site utilise des cookies et vous donne le contrôle sur ceux que vous souhaitez activer
+      - 'button "Cookies : Tout accepter" [ref=f10e127] [cursor=pointer]': ☐ Tout accepter
+      - 'button "Cookies : Tout refuser" [ref=f10e128] [cursor=pointer]': ☐ Tout refuser
+      - button "Personnaliser (fenêtre modale)" [ref=f10e129] [cursor=pointer]: Personnaliser

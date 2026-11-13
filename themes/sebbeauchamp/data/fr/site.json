@@ -1,15 +1,14 @@
 {
     "site": {
-        "home_title": "Designer numérique et d'identité, je m’aligne sur vos objectifs en prenant en compte les enjeux esthétiques, techniques et stratégiques.",
+        "home_tagline": "Comprendre, réfléchir, réaliser.",
+        "home_title": "Designer depuis 2008, je conçois des identités et des expériences numériques.",
         "home_description": "Je m’aligne sur vos objectifs en prenant en compte les enjeux esthétiques, techniques et stratégiques.",
-        "artist_title": "Peintre et dessinateur",
-        "artist_presentation": "André Jasmin est l’un des pionniers de l’art abstrait au Québec. Pendant plus de 70 ans, il n’a jamais cessé de créer, porté par un désir constant d’explorer et une vision généreuse de l’art.",
-        "artist_button": "Découvrir l'artiste",
-        "art_title": "Œuvres",
-        "project_presentation": "Projets récents",
-        "project_button": "Voir tous",
         "about_title": "Un projet réfléchi coûte moins d’énergie et traverse mieux le temps. Les résultats suivent souvent assez naturellement.",
         "about_link": "Lire à propos",
+        "info_overtitle": "Info",
+        "info_title": "Le diable est dans les détails, et le génie aussi ! Un projet réfléchi coûte moins d’énergie et traverse mieux le temps. Les résultats suivent souvent assez naturellement.",
+        "info_description": "Je m’aligne sur vos objectifs en prenant en compte les enjeux esthétiques, techniques et stratégiques. Ce qui me motive, ce sont les projets engageants qui ont pour ambition de laisser une trace.",
+       
         "about_service_title": "Services",
         "about_service_1": "Site vitrine",
         "about_service_2": "Ecommerce",

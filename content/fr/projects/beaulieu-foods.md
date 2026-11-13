@@ -4,7 +4,9 @@ date: '2026-03-11'
 title: 'Beaulieu'
 imagepreview : 'beaulieu-preview.jpg'
 
-description : 'Alimentation'
+industry : 'Alimentation'
+
+preview_description : Une troisième génération d’associés, un nouveau branding s’est imposé pour marquer leur arrivée et rafraîchir l'image.
 
 project_images :
 - 'beaulieu/beaulieu-logo-badge.jpg'
@@ -21,12 +23,12 @@ intro : "Depuis 1960, Beaulieu est un acteur de l’industrie alimentaire au Qu�
 link : 'https://beaulieufoods.com'
 
 project_type: 
+- Identité
 - Site vitrine
 
 skills : 
 - Design
-- Developpement
-- Identité
+- Développement
 
 tools : 
 - Figma

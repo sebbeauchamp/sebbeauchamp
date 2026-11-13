@@ -1,0 +1,111 @@
+- generic [ref=f2e1]:
+  - banner [ref=f2e2]:
+    - generic [ref=f2e3]:
+      - generic [ref=f2e4]: Disponible
+      - navigation "Main navigation" [ref=f2e7]:
+        - generic [ref=f2e8]:
+          - link "Sébastien Beauchamp" [ref=f2e9] [cursor=pointer]:
+            - /url: /
+            - generic [ref=f2e10]:
+              - generic [ref=f2e11]: Sébastien
+              - generic [ref=f2e12]: Beauchamp
+          - generic [ref=f2e13]:
+            - list [ref=f2e14]:
+              - listitem [ref=f2e15]:
+                - link "Projets" [ref=f2e16] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=f2e17]:
+                - link "Info" [ref=f2e18] [cursor=pointer]:
+                  - /url: /a-propos/
+            - list [ref=f2e20]:
+              - listitem [ref=f2e21]:
+                - link "Contact" [ref=f2e22] [cursor=pointer]:
+                  - /url: /contact/
+      - link "English" [ref=f2e24] [cursor=pointer]:
+        - /url: /en/
+  - main [ref=f2e25]:
+    - generic [ref=f2e26]:
+      - generic [ref=f2e27]:
+        - paragraph [ref=f2e28]: Comprendre, réfléchir, réaliser.
+        - heading "Designer depuis 2008, je conçois des identités et des expériences numériques." [level=1] [ref=f2e29]
+      - generic [ref=f2e33]:
+        - generic [ref=f2e34]:
+          - img "Beaulieu" [ref=f2e36]
+          - generic [ref=f2e37]:
+            - heading [level=2] [ref=f2e38]:
+              - link "Beaulieu" [ref=f2e39] [cursor=pointer]:
+                - /url: /projects/beaulieu-foods/
+            - paragraph [ref=f2e40]: Alimentation. Une troisième génération d’associés, un nouveau branding s’est imposé pour marquer leur arrivée et rafraîchir l'image.
+            - generic [ref=f2e41]:
+              - generic [ref=f2e42]: Identité
+              - generic [ref=f2e43]: •Site vitrine
+              - generic [ref=f2e44]: •Design
+              - generic [ref=f2e45]: •Développement
+        - generic [ref=f2e46]:
+          - img "Distillerie de Montréal" [ref=f2e48]
+          - generic [ref=f2e49]:
+            - heading [level=2] [ref=f2e50]:
+              - link "Distillerie de Montréal" [ref=f2e51] [cursor=pointer]:
+                - /url: /projects/distillerie-de-montreal/
+            - paragraph [ref=f2e52]: Spiriteux. Installée dans le quartier Rosemont, en plein cœur de Montréal. Elle s’est dotée d’un nouveau site vitrine pour développer la marque localement et à l’international.
+            - generic [ref=f2e53]:
+              - generic [ref=f2e54]: Site vitrine
+              - generic [ref=f2e55]: •Design
+        - generic [ref=f2e56]:
+          - img "Olow" [ref=f2e58]
+          - generic [ref=f2e59]:
+            - heading [level=2] [ref=f2e60]:
+              - link "Olow" [ref=f2e61] [cursor=pointer]:
+                - /url: /projects/olow/
+            - paragraph [ref=f2e62]: Mode durable. Une marque française au regard libre, qui aime créer aux côtés d'artistes aux univers multiples.
+            - generic [ref=f2e63]:
+              - generic [ref=f2e64]: Ecommerce
+              - generic [ref=f2e65]: •Design
+  - contentinfo [ref=f2e66]:
+    - generic [ref=f2e67]:
+      - generic [ref=f2e68]:
+        - generic [ref=f2e69]: Disponible
+        - paragraph [ref=f2e71]: Parle-moi de tes projets, on les rendra concrêts.
+      - generic [ref=f2e72]:
+        - link "contact@sebastienbeauchamp.com" [ref=f2e73] [cursor=pointer]:
+          - /url: mailto:contact@sebastienbeauchamp.com
+          - text: contact@sebastienbeauchamp.com →
+        - list [ref=f2e74]:
+          - listitem [ref=f2e75]:
+            - link "Projets" [ref=f2e76] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=f2e77]:
+            - link "Info" [ref=f2e78] [cursor=pointer]:
+              - /url: /a-propos/
+          - listitem [ref=f2e79]:
+            - link "Contact" [ref=f2e80] [cursor=pointer]:
+              - /url: /contact/
+        - list [ref=f2e81]:
+          - listitem [ref=f2e82]:
+            - link "Linkedin" [ref=f2e83] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f2e84]:
+            - link "Dribbble" [ref=f2e85] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f2e86]:
+            - link "Instagram" [ref=f2e87] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f2e88]:
+            - link "Unsplash" [ref=f2e89] [cursor=pointer]:
+              - /url: "#"
+        - list [ref=f2e90]:
+          - listitem [ref=f2e91]:
+            - link "Infolettre" [ref=f2e92] [cursor=pointer]:
+              - /url: mailto:contact@sebastienbeauchamp.com?subject=Infolettre
+          - listitem [ref=f2e93]:
+            - link "Cookies" [ref=f2e94] [cursor=pointer]:
+              - /url: "#"
+      - paragraph [ref=f2e95]: ©2008-2026
+  - region "Panneau de gestion des cookies":
+    - heading "Panneau de gestion des cookies" [level=2] [ref=f2e96]
+    - text: ☐ ☐ ✛ ☑ ☐ ✛ ✛ ✛ ✛ ✛ ☐ ☐ ✛ ✛ ✛ ✛
+    - dialog "Panneau de gestion des cookies" [active] [ref=f2e97]:
+      - paragraph [ref=f2e98]: Ce site utilise des cookies et vous donne le contrôle sur ceux que vous souhaitez activer
+      - 'button "Cookies : Tout accepter" [ref=f2e99] [cursor=pointer]': ☐ Tout accepter
+      - 'button "Cookies : Tout refuser" [ref=f2e100] [cursor=pointer]': ☐ Tout refuser
+      - button "Personnaliser (fenêtre modale)" [ref=f2e101] [cursor=pointer]: Personnaliser

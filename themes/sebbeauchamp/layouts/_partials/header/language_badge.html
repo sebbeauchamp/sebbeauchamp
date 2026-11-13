@@ -1,18 +1,18 @@
 {{- /*
-Renders a single text link naming the language you'll switch to, linking to
-the equivalent page in that language. Desktop only — the plain-link fallback
-in language_selector.html covers mobile.
+Renders a plain text link with the name of the language you'll switch to
+(e.g. "English"), linking to the equivalent page in that language.
+Desktop only — Figma 1489:451. The mobile menu uses language_selector.html.
 */}}
 {{ if hugo.IsMultilingual }}
 {{ $target := "" }}
 {{ $targetName := "" }}
+{{ $targetLang := "" }}
 {{ if .IsTranslated }}
-{{ range .Translations }}{{ $target = .RelPermalink }}{{ $targetName = .Language.LanguageName }}{{ end }}
+{{ range .Translations }}{{ $target = .RelPermalink }}{{ $targetName = .Language.LanguageName }}{{ $targetLang = .Language.Lang }}{{ end }}
 {{ else }}
-{{ range site.Languages }}{{ if ne site.Language.Lang .Lang }}{{ $target = .Lang | relURL }}{{ $targetName = .LanguageName }}{{ end }}{{ end }}
+{{ range site.Languages }}{{ if ne site.Language.Lang .Lang }}{{ $target = .Lang | relURL }}{{ $targetName = .LanguageName }}{{ $targetLang = .Lang }}{{ end }}{{ end }}
 {{ end }}
 {{ if $target }}
-<a class="lang-link" href="{{ $target }}"
-  aria-label="{{ if eq site.Language.Lang "fr" }}Switch to English{{ else }}Passer en français{{ end }}">{{ $targetName }}</a>
+<a class="lang-link" href="{{ $target }}" hreflang="{{ $targetLang }}" lang="{{ $targetLang }}">{{ $targetName }}</a>
 {{ end }}
 {{ end }}

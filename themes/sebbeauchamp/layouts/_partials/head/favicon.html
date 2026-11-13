@@ -1,6 +1,17 @@
-<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="shortcut icon" href="/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="{{ site.Title }}" />
-<link rel="manifest" href="/site.webmanifest" />
+{{- /*
+Favicons — yellow globe (static/favicon.svg, from Figma 1489:452).
+  favicon.ico            16/32/48 — legacy browsers, RSS readers, /favicon.ico requests
+  favicon.svg            modern browsers (sharp at any size)
+  favicon-96x96.png      PNG fallback (e.g. Google search results)
+  apple-touch-icon.png   180×180 on the site background — iOS/iPadOS home screen
+  site.webmanifest       Android / installable PWA (any + maskable icons)
+Bump ?v= when the icons change: browsers cache favicons aggressively.
+*/ -}}
+{{- $v := "2" }}
+<link rel="icon" href="/favicon.ico?v={{ $v }}" sizes="48x48" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v={{ $v }}" />
+<link rel="icon" type="image/png" href="/favicon-96x96.png?v={{ $v }}" sizes="96x96" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v={{ $v }}" />
+<meta name="apple-mobile-web-app-title" content="Beauchamp" />
+<link rel="manifest" href="/site.webmanifest?v={{ $v }}" />
+<meta name="theme-color" content="#efebe1" />

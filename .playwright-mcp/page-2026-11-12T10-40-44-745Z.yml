@@ -1,0 +1,129 @@
+- generic [ref=f1e1]:
+  - banner [ref=f1e2]:
+    - navigation "Main navigation" [ref=f1e4]:
+      - generic [ref=f1e5]:
+        - link "Sébastien Beauchamp" [ref=f1e6] [cursor=pointer]:
+          - /url: /
+          - generic [ref=f1e7]: Sébastien
+          - generic [ref=f1e8]: Beauchamp
+        - list [ref=f1e9]:
+          - listitem [ref=f1e10]:
+            - link "Contact" [ref=f1e11] [cursor=pointer]:
+              - /url: /contact/
+        - button "Toggle navigation menu" [ref=f1e12] [cursor=pointer]:
+          - generic [ref=f1e13]: Menu
+  - main [ref=f1e14]:
+    - generic [ref=f1e15]:
+      - generic [ref=f1e16]:
+        - paragraph [ref=f1e17]: Comprendre, réfléchir, réaliser.
+        - heading "Designer depuis 2008, je crée des identités de marque et des expériences numériques." [level=1] [ref=f1e18]
+      - generic [ref=f1e22]:
+        - generic [ref=f1e23]:
+          - img "Beaulieu" [ref=f1e25]
+          - generic [ref=f1e26]:
+            - heading [level=2] [ref=f1e27]:
+              - link "Beaulieu" [ref=f1e28] [cursor=pointer]:
+                - /url: /projects/beaulieu-foods/
+            - paragraph [ref=f1e29]: Alimentation. Une troisième génération d’associés, un nouveau branding s’est imposé pour marquer leur arrivée et rafraîchir l'image.
+            - generic [ref=f1e30]:
+              - generic [ref=f1e31]: Identité
+              - generic [ref=f1e32]: •Site vitrine
+              - generic [ref=f1e33]: •Design
+              - generic [ref=f1e34]: •Développement
+        - generic [ref=f1e35]:
+          - img "Distillerie de Montréal" [ref=f1e37]
+          - generic [ref=f1e38]:
+            - heading [level=2] [ref=f1e39]:
+              - link "Distillerie de Montréal" [ref=f1e40] [cursor=pointer]:
+                - /url: /projects/distillerie-de-montreal/
+            - paragraph [ref=f1e41]: Spiriteux. Installée dans le quartier Rosemont, en plein cœur de Montréal. Elle s’est dotée d’un nouveau site vitrine pour développer la marque localement et à l’international.
+            - generic [ref=f1e42]:
+              - generic [ref=f1e43]: Site vitrine
+              - generic [ref=f1e44]: •Design
+        - generic [ref=f1e45]:
+          - img "Olow" [ref=f1e47]
+          - generic [ref=f1e48]:
+            - heading [level=2] [ref=f1e49]:
+              - link "Olow" [ref=f1e50] [cursor=pointer]:
+                - /url: /projects/olow/
+            - paragraph [ref=f1e51]: Mode durable. Une marque française au regard libre, qui aime créer aux côtés d'artistes aux univers multiples.
+            - generic [ref=f1e52]:
+              - generic [ref=f1e53]: Ecommerce
+              - generic [ref=f1e54]: •Design
+        - generic [ref=f1e55]:
+          - img "Tous Ergo" [ref=f1e57]
+          - generic [ref=f1e58]:
+            - heading [level=2] [ref=f1e59]:
+              - link "Tous Ergo" [ref=f1e60] [cursor=pointer]:
+                - /url: /projects/tous-ergo/
+            - paragraph [ref=f1e61]: .
+            - generic [ref=f1e62]:
+              - generic [ref=f1e63]: Site vitrine
+              - generic [ref=f1e64]: •Design
+              - generic [ref=f1e65]: •Developpement
+        - generic [ref=f1e66]:
+          - img "Pro-Nutrition" [ref=f1e68]
+          - generic [ref=f1e69]:
+            - heading [level=2] [ref=f1e70]:
+              - link "Pro-Nutrition" [ref=f1e71] [cursor=pointer]:
+                - /url: /projects/pro-nutrition/
+            - paragraph [ref=f1e72]: .
+            - generic [ref=f1e73]:
+              - generic [ref=f1e74]: Site vitrine
+              - generic [ref=f1e75]: •Design
+              - generic [ref=f1e76]: •Developpement
+        - generic [ref=f1e77]:
+          - img "Bo-Coq" [ref=f1e79]
+          - generic [ref=f1e80]:
+            - heading [level=2] [ref=f1e81]:
+              - link "Bo-Coq" [ref=f1e82] [cursor=pointer]:
+                - /url: /projects/bo-coq/
+            - paragraph [ref=f1e83]: .
+            - generic [ref=f1e84]:
+              - generic [ref=f1e85]: Ecommerce
+              - generic [ref=f1e86]: •Design
+              - generic [ref=f1e87]: •Developpement
+  - contentinfo [ref=f1e88]:
+    - generic [ref=f1e90]:
+      - generic [ref=f1e91]: Disponible
+      - generic [ref=f1e93]:
+        - generic [ref=f1e94]:
+          - paragraph [ref=f1e95]: Parle-moi de tes projets, on les rendra concrêts.
+          - link "contact@sebastienbeauchamp.com" [ref=f1e96] [cursor=pointer]:
+            - /url: mailto:contact@sebastienbeauchamp.com
+        - list [ref=f1e97]:
+          - listitem [ref=f1e98]:
+            - link "Projets" [ref=f1e99] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=f1e100]:
+            - link "Info" [ref=f1e101] [cursor=pointer]:
+              - /url: /a-propos/
+        - list [ref=f1e102]:
+          - listitem [ref=f1e103]:
+            - link "Linkedin" [ref=f1e104] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f1e105]:
+            - link "Dribbble" [ref=f1e106] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f1e107]:
+            - link "Instagram" [ref=f1e108] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f1e109]:
+            - link "Unsplash" [ref=f1e110] [cursor=pointer]:
+              - /url: "#"
+        - list [ref=f1e112]:
+          - listitem [ref=f1e113]:
+            - link "Infolettre" [ref=f1e114] [cursor=pointer]:
+              - /url: mailto:contact@sebastienbeauchamp.com?subject=Infolettre
+          - listitem [ref=f1e115]:
+            - link "Cookies" [ref=f1e116] [cursor=pointer]:
+              - /url: "#"
+      - paragraph [ref=f1e117]: © Sébastien Beauchamp • 2008-2026
+  - region "Panneau de gestion des cookies":
+    - heading "Panneau de gestion des cookies" [level=2] [ref=f1e118]
+    - text: ☐ ☐ ✛ ☑ ☐ ✛ ✛ ✛ ✛ ✛ ☐ ☐ ✛ ✛ ✛ ✛
+    - dialog "Panneau de gestion des cookies" [active] [ref=f1e119]:
+      - paragraph [ref=f1e120]: Ce site utilise des cookies et vous donne le contrôle sur ceux que vous souhaitez activer
+      - 'button "Cookies : Tout accepter" [ref=f1e121] [cursor=pointer]': ☐ Tout accepter
+      - 'button "Cookies : Tout refuser" [ref=f1e122] [cursor=pointer]': ☐ Tout refuser
+      - button "Personnaliser (fenêtre modale)" [ref=f1e123] [cursor=pointer]: Personnaliser

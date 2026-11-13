@@ -5193,6 +5193,37 @@
     });
   });
   window.bootstrap = bootstrap_esm_exports;
+  (function() {
+    const header = document.querySelector(".header");
+    if (!header) return;
+    const toggler = header.querySelector(".navbar-toggler");
+    const THRESHOLD = 8;
+    let lastY = window.scrollY;
+    let ticking = false;
+    function update() {
+      const y = Math.max(window.scrollY, 0);
+      const menuOpen = toggler && toggler.getAttribute("aria-expanded") === "true";
+      header.classList.toggle("is-scrolled", y > 0);
+      if (menuOpen || y <= header.offsetHeight) {
+        header.classList.remove("is-hidden");
+        lastY = y;
+      } else if (Math.abs(y - lastY) >= THRESHOLD) {
+        header.classList.toggle("is-hidden", y > lastY);
+        lastY = y;
+      }
+      ticking = false;
+    }
+    window.addEventListener("scroll", function() {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    }, { passive: true });
+    header.addEventListener("focusin", function() {
+      header.classList.remove("is-hidden");
+    });
+    update();
+  })();
 })();
 /*! Bundled license information:
 
