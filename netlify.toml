@@ -28,3 +28,15 @@ HUGO_VERSION = "0.147.5"
 
 [context.next.environment]
 HUGO_ENABLEGITINFO = "true"
+
+# The contact page was removed: Contact links now copy the email address
+# (see app.js). Send old /contact links to the homepage.
+[[redirects]]
+from = "/contact/*"
+to = "/"
+status = 301
+
+[[redirects]]
+from = "/en/contact/*"
+to = "/en/"
+status = 301

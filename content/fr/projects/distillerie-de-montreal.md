@@ -4,7 +4,7 @@ date: '2026-03-11'
 title: 'Distillerie de Montréal'
 imagepreview : 'distillerie-de-montreal-preview.jpg'
 
-preview_description : Installée dans le quartier Rosemont, en plein cœur de Montréal. Elle s’est dotée d’un nouveau site vitrine pour développer la marque localement et à l’international.
+preview_description : Un site vitrine pour développer localement et à l’international la distillerie installée en plein cœur de Montréal.
 
 
 project_images :
@@ -18,7 +18,7 @@ project_images :
 
 industry : 'Spiriteux'
 
-intro : "Depuis 2013, la Distillerie de Montréal est installée dans le quartier Rosemont, en plein cœur de Montréal. Elle avait besoin d’un nouveau site qui présentait les produits et la vision de la distillerie afin de mieux développer la marque localement et à l’international. Ce projet s’inscrit aussi dans le désir de lancer la ligne des prêts-à-boire, elle veut conserver son image créative où se côtoient tradition et modernité."
+intro : L'équipe de la distillerie avait besoin d’un site web où se côtoient tradition et modernité pour présenter ses produits et sa vision. Ce projet se déploie avec le lancement de sa gamme des prêts-à-boire et son développement à l’international.
 
 link : 'https://distilleriedemontreal.com'
 

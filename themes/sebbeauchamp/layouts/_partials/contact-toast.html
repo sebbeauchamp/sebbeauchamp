@@ -1,0 +1,12 @@
+{{- /*
+"Email copied" toast — Figma 1532:225 (+ 226 text, 227 mail icon, 230 badge, 231 check).
+Shown by app.js when a [data-copy-email] link is clicked and the address is copied.
+*/ -}}
+<div class="contact-toast" role="status" aria-live="polite" data-contact-toast>
+  <span class="contact-toast__icon" aria-hidden="true">
+    <img class="contact-toast__mail" src="{{ "images/icons/toast-mail.svg" | relURL }}" width="24" height="24" alt="">
+    <img class="contact-toast__badge" src="{{ "images/icons/toast-badge.svg" | relURL }}" width="26" height="26" alt="">
+    <img class="contact-toast__check" src="{{ "images/icons/toast-check.svg" | relURL }}" width="8" height="6" alt="">
+  </span>
+  <span class="contact-toast__text">{{ i18n "emailCopied" }}</span>
+</div>

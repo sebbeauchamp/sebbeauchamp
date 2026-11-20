@@ -73,7 +73,7 @@
   // Google Analytics (GA4) - Ready to activate
   // Uncomment and add your Measurement ID when ready to use
 
-  tarteaucitron.user.gtagUa = 'G-FZL1M6PX80'; // Replace with your GA4 Measurement ID
+  tarteaucitron.user.gtagUa = 'G-2G2SLFN4DH'; // Replace with your GA4 Measurement ID
   tarteaucitron.user.gtagMore = function () {
     //   // Additional gtag configuration can go here
   };

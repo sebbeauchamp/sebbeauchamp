@@ -30,6 +30,9 @@ yellow pill button. Use `cta` to choose which group to render:
 {{- if eq $isCta $cta }}
 {{- $class := cond $isCta "nav-link nav-pill nav-pill--cta" "nav-link" }}
 {{- $attrs := dict "href" .URL "class" $class }}
+{{- if .Params.copy_email }}
+{{- $attrs = merge $attrs (dict "data-copy-email" "true") }}
+{{- end }}
 {{- if $page.IsMenuCurrent .Menu . }}
 {{- $attrs = merge $attrs (dict "class" (printf "%s active" $class) "aria-current" "page") }}
 {{- else if $page.HasMenuCurrent .Menu . }}

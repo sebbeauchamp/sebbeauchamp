@@ -17,3 +17,4 @@ cookieSettings: Cookies # Footer link for tarteaucitron
 404Message: Cette page n’est plus là… ou peut-être n’a-t-elle jamais existé.
 404HomeLinkMessage: Retour à la page d'accueil
 moreProjects: Continue d’explorer d’autres projets # Project page — suggested projects heading
+emailCopied: L’adresse email a été copiée # Toast after a Contact click copies the address

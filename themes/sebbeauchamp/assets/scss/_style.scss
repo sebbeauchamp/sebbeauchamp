@@ -146,7 +146,7 @@ $nav-pill-border: #78766d;
     border: 1px solid #fff;
     border-radius: 28px;
     background: linear-gradient(180deg, rgba(255, 255, 255, .88) 0%, rgba(255, 255, 255, .64) 100%);
-    box-shadow: 0 2px 24px 0 rgba(255, 255, 255, .64), 0 12px 24px 0 rgba(0, 0, 0, .08);
+    box-shadow: 0 2px 24px 0 rgba(255, 255, 255, .48), 0 12px 24px 0 rgba(0, 0, 0, .08);
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
 
@@ -265,7 +265,7 @@ $nav-pill-border: #78766d;
   .navbar-expand-lg .nav-links .nav-link {
     font-size: 32px;
     line-height: 1.25;
-    letter-spacing: -0.64px;
+    letter-spacing: -1%;
   }
 
   .navbar-expand-lg .nav-links .nav-item--lang .nav-link {
@@ -288,8 +288,7 @@ $nav-pill-border: #78766d;
   border-radius: 30px;
   font-size: 14px;
   font-weight: 400;
-  line-height: 1;
-  letter-spacing: -0.14px;
+  line-height: 1.25;
   white-space: nowrap;
   color: $nav-ink;
   transition: background-color .15s ease-in-out, border-color .15s ease-in-out;
@@ -325,8 +324,8 @@ $nav-pill-border: #78766d;
 // Desktop language switch: plain text on the page background — Figma 1489:451
 .lang-link {
   font-size: 14px;
-  line-height: 1;
-  letter-spacing: -0.14px;
+  font-weight: 400;
+  line-height: 1.25;
   white-space: nowrap;
   color: $nav-ink;
   text-decoration: none;
@@ -412,7 +411,7 @@ $nav-pill-border: #78766d;
       border-radius: 50%;
       background: #05995b;
       opacity: 0;
-      animation: availability-pulse 6s var(--ease-out) 2.5s infinite;
+      animation: availability-pulse 3.5s var(--ease-out) 0.75s infinite;
     }
   }
 
@@ -759,9 +758,13 @@ $info-text: #161d19;
   &__list {
     margin: 0;
     font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: -0.02em;
+    line-height: 1.25;
+    letter-spacing: -1%;
     color: $info-text;
+
+    li {
+        margin-bottom: 8px;
+      }
   }
 }
 
@@ -923,6 +926,98 @@ $info-text: #161d19;
     &__card:active,
     &__card:hover img {
       transform: none;
+    }
+  }
+}
+
+// ************** CONTACT TOAST — Figma 1532:225 ********
+// 277×56 pill; mail icon at 24/16, text at 56/16 (so 24px side padding).
+// app.js toggles .is-visible. Transitions (not keyframes) so rapid clicks
+// retarget smoothly instead of restarting.
+.contact-toast {
+  position: fixed;
+  z-index: 1090; // above the sticky header
+  // Centered by layout, not translateX(-50%): Safari mis-interpolates a
+  // transform mixing % and calc(), which made the toast drift right while
+  // sliding in. The transform below only ever moves it vertically.
+  left: 0;
+  right: 0;
+  bottom: 24px;
+  width: max-content;
+  max-width: calc(100% - 32px);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 56px;
+  padding: 0 23px; // 24px minus the 1px border
+  border: 1px solid #fff;
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .88) 0%, rgba(255, 255, 255, .64) 100%);
+  box-shadow: 0 2px 24px 0 rgba(255, 255, 255, .48), 0 12px 24px 0 rgba(0, 0, 0, .08);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  white-space: nowrap;
+  pointer-events: none;
+
+  // Hidden: 80px down (56px height + 24px gap) = fully off screen.
+  // Exit is faster than enter.
+  opacity: 0;
+  transform: translate3d(0, 80px, 0);
+  transition:
+    transform 200ms var(--ease-out),
+    opacity 200ms ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition:
+      transform 400ms var(--ease-out),
+      opacity 250ms ease;
+  }
+
+  // 24×24 slot; the badge and check overflow it at their Figma offsets
+  &__icon {
+    position: relative;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+
+    img {
+      position: absolute;
+      display: block;
+    }
+  }
+
+  &__mail {
+    top: 0;
+    left: 0;
+  }
+
+  // 14px circle at (14, -4); its 26×26 SVG includes the drop shadow
+  &__badge {
+    top: -9px;
+    left: 8px;
+  }
+
+  // 6×4 check at (18, 1); its 8×6 SVG includes the stroke overflow
+  &__check {
+    top: 0;
+    left: 17px;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    color: #161d19;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &,
+    &.is-visible {
+      transform: none;
+      transition: opacity 200ms ease;
     }
   }
 }

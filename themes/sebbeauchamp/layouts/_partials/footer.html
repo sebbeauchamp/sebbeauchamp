@@ -7,13 +7,13 @@
   </div>
 
   <div class="footer__grid">
-    <a class="footer__email" href="mailto:{{ site.Params.email }}">{{ site.Params.email }} <span aria-hidden="true">→</span></a>
+    <a class="footer__email" href="mailto:{{ site.Params.email }}" data-copy-email="true">{{ site.Params.email }} <span aria-hidden="true">→</span></a>
 
     <ul class="footer__links list-unstyled">
       {{- range site.Menus.main }}
       {{- $name := .Name }}
       {{- with .Identifier }}{{ with T . }}{{ $name = . }}{{ end }}{{ end }}
-      <li><a href="{{ .URL }}">{{ $name }}</a></li>
+      <li><a href="{{ .URL }}"{{ if .Params.copy_email }} data-copy-email="true"{{ end }}>{{ $name }}</a></li>
       {{- end }}
     </ul>
 
@@ -26,7 +26,7 @@
     {{- end }}
 
     <ul class="footer__links list-unstyled">
-      <li><a href="mailto:{{ site.Params.email }}?subject={{ i18n "newsletter" }}">{{ i18n "newsletter" }}</a></li>
+      <li><a href="{{ site.Params.newsletter_url }}" target="_blank" rel="noopener" >{{ i18n "newsletter" }}</a></li>
       <li><a href="#" onclick="tarteaucitron.userInterface.openPanel(); return false;">{{ i18n "cookieSettings" }}</a></li>
     </ul>
   </div>

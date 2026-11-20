@@ -38,7 +38,7 @@
         <div class="nav-card d-lg-none">
           {{- partial "status-pill.html" . }}
           <p class="nav-card__title">{{ i18n "footerHeading" }}</p>
-          <a class="nav-pill nav-pill--cta" href="{{ "contact/" | relLangURL }}">{{ i18n "contactCta" }}</a>
+          <a class="nav-pill nav-pill--cta" href="mailto:{{ site.Params.email }}" data-copy-email="true">{{ i18n "contactCta" }}</a>
         </div>
       </div>
 

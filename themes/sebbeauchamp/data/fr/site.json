@@ -1,7 +1,7 @@
 {
     "site": {
         "home_tagline": "Comprendre, réfléchir, réaliser.",
-        "home_title": "Designer depuis 2008, je conçois des identités et des expériences numériques.",
+        "home_title": "Depuis 2008, je suis designer d'identités de marques et d'expériences numériques.",
         "home_description": "Je m’aligne sur vos objectifs en prenant en compte les enjeux esthétiques, techniques et stratégiques.",
         "about_title": "Un projet réfléchi coûte moins d’énergie et traverse mieux le temps. Les résultats suivent souvent assez naturellement.",
         "about_link": "Lire à propos",
@@ -25,11 +25,6 @@
         "about_interest_4": "Sport",  
         "about_interest_5": "Art et culture",   
         "about_interest_6": "Urbanisme et architecture",    
-        "about_interest_7": "Technologie et innovation",    
-
-
-        "contact_title": "Contactez-nous",
-        "footer_text": "Envie d’acquérir une œuvre, organiser une exposition ou pour toute autre demande",
-        "footer_cta": "écrivez-nous"
+        "about_interest_7": "Technologie et innovation"
     }
 }

@@ -1,0 +1,103 @@
+- generic [ref=f3e1]:
+  - banner [ref=f3e2]:
+    - navigation "Main navigation" [ref=f3e4]:
+      - generic [ref=f3e5]:
+        - link "Sébastien Beauchamp" [ref=f3e6] [cursor=pointer]:
+          - /url: /
+          - generic [ref=f3e7]:
+            - generic [ref=f3e8]: Sébastien
+            - generic [ref=f3e9]: Beauchamp
+        - list [ref=f3e10]:
+          - listitem [ref=f3e11]:
+            - link "Contact" [ref=f3e12] [cursor=pointer]:
+              - /url: mailto:contact@sebastienbeauchamp.com
+        - button "Toggle navigation menu" [ref=f3e13] [cursor=pointer]:
+          - generic [ref=f3e14]: Menu
+  - main [ref=f3e15]:
+    - generic [ref=f3e16]:
+      - generic [ref=f3e17]:
+        - paragraph [ref=f3e18]: Comprendre, réfléchir, réaliser.
+        - heading "Depuis 2008, je suis designer d'identités de marques et d'expériences numériques." [level=1] [ref=f3e19]
+      - generic [ref=f3e23]:
+        - generic [ref=f3e24]:
+          - img "Beaulieu" [ref=f3e26]
+          - generic [ref=f3e27]:
+            - heading [level=2] [ref=f3e28]:
+              - link "Beaulieu" [ref=f3e29] [cursor=pointer]:
+                - /url: /projects/beaulieu-foods/
+            - paragraph [ref=f3e30]: Alimentation B2B. Rafraîchir l'image de l'entreprise suite au rachat par de nouveaux associés.
+            - generic [ref=f3e31]:
+              - generic [ref=f3e32]: Identité
+              - generic [ref=f3e33]: •Site vitrine
+              - generic [ref=f3e34]: •Design
+              - generic [ref=f3e35]: •Développement
+        - generic [ref=f3e36]:
+          - img "Distillerie de Montréal" [ref=f3e38]
+          - generic [ref=f3e39]:
+            - heading [level=2] [ref=f3e40]:
+              - link "Distillerie de Montréal" [ref=f3e41] [cursor=pointer]:
+                - /url: /projects/distillerie-de-montreal/
+            - paragraph [ref=f3e42]: Spiriteux. Un site vitrine pour développer localement et à l’international la distillerie installée en plein cœur de Montréal.
+            - generic [ref=f3e43]:
+              - generic [ref=f3e44]: Site vitrine
+              - generic [ref=f3e45]: •Design
+        - generic [ref=f3e46]:
+          - img "Olow" [ref=f3e48]
+          - generic [ref=f3e49]:
+            - heading [level=2] [ref=f3e50]:
+              - link "Olow" [ref=f3e51] [cursor=pointer]:
+                - /url: /projects/olow/
+            - paragraph [ref=f3e52]: Mode durable. Une marque française au regard libre, qui aime créer aux côtés d'artistes aux univers multiples.
+            - generic [ref=f3e53]:
+              - generic [ref=f3e54]: Ecommerce
+              - generic [ref=f3e55]: •Design
+  - contentinfo [ref=f3e56]:
+    - generic [ref=f3e57]:
+      - generic [ref=f3e58]:
+        - generic [ref=f3e59]: Disponible
+        - paragraph [ref=f3e61]: Parle-moi de tes projets, on les rendra concrêts.
+      - generic [ref=f3e62]:
+        - link "contact@sebastienbeauchamp.com" [ref=f3e63] [cursor=pointer]:
+          - /url: mailto:contact@sebastienbeauchamp.com
+          - text: contact@sebastienbeauchamp.com →
+        - list [ref=f3e64]:
+          - listitem [ref=f3e65]:
+            - link "Projets" [ref=f3e66] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=f3e67]:
+            - link "Info" [ref=f3e68] [cursor=pointer]:
+              - /url: /info/
+          - listitem [ref=f3e69]:
+            - link "Contact" [ref=f3e70] [cursor=pointer]:
+              - /url: mailto:contact@sebastienbeauchamp.com
+        - list [ref=f3e71]:
+          - listitem [ref=f3e72]:
+            - link "Linkedin" [ref=f3e73] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/sebbeauchamp/
+          - listitem [ref=f3e74]:
+            - link "Dribbble" [ref=f3e75] [cursor=pointer]:
+              - /url: https://dribbble.com/sebbeauchamp
+          - listitem [ref=f3e76]:
+            - link "Instagram" [ref=f3e77] [cursor=pointer]:
+              - /url: https://www.instagram.com/sebbeauchamp/
+          - listitem [ref=f3e78]:
+            - link "Unsplash" [ref=f3e79] [cursor=pointer]:
+              - /url: https://unsplash.com/fr/@sebbeauchamp
+        - list [ref=f3e80]:
+          - listitem [ref=f3e81]:
+            - link "Infolettre" [ref=f3e82] [cursor=pointer]:
+              - /url: https://sebbeauchamp.substack.com
+          - listitem [ref=f3e83]:
+            - link "Cookies" [ref=f3e84] [cursor=pointer]:
+              - /url: "#"
+      - paragraph [ref=f3e85]: ©2008-2026
+  - status:
+    - generic: L’adresse email a été copiée
+  - region "Panneau de gestion des cookies":
+    - heading "Panneau de gestion des cookies" [level=2] [ref=f3e86]
+    - text: ☐ ☐ ✛ ☑ ☐ ✛ ✛ ✛ ✛ ✛ ☐ ☐ ✛ ✛ ✛ ✛
+    - dialog "Panneau de gestion des cookies" [active] [ref=f3e87]:
+      - paragraph [ref=f3e88]: Ce site utilise des cookies et vous donne le contrôle sur ceux que vous souhaitez activer
+      - 'button "Cookies : Tout accepter" [ref=f3e89] [cursor=pointer]': ☐ Tout accepter
+      - 'button "Cookies : Tout refuser" [ref=f3e90] [cursor=pointer]': ☐ Tout refuser
+      - button "Personnaliser (fenêtre modale)" [ref=f3e91] [cursor=pointer]: Personnaliser

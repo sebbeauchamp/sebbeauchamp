@@ -2,13 +2,9 @@
     "site": {
         "home_tagline": "Understand, reflect, create.",
         "home_title": "Independent designer, my work lives between brand identities and digital experiences.",
-        "title": "The Origins of Modern Quebec Painting.",
-        "artist_title": "Quebec Painter and Draftsman",
-        "artist_presentation": "André Jasmin is one of the pioneers of abstract art in Quebec. For more than 70 years, he never stopped creating, driven by a constant desire to explore and a generous vision of art.",
-        "artist_button": "Read about the artist",
-        "art_title": "Artworks",
-        "art_button": "See artworks",
-        "about_title": "Info",
+        "home_description": "I align with your goals by taking aesthetic, technical and strategic stakes into account.",
+        "about_title": "A well-thought-out project costs less energy and stands the test of time better. Results usually follow quite naturally.",
+        "about_link": "Read about",
         "info_overtitle": "Info",
         "info_title": "The devil is in the details, and so is genius! A well-thought-out project costs less energy and stands the test of time better. Results usually follow quite naturally.",
         "info_description": "I align with your goals by taking aesthetic, technical and strategic stakes into account. What drives me are engaging projects that aim to leave a mark.",
@@ -27,9 +23,6 @@
         "about_interest_4": "Sports",
         "about_interest_5": "Arts and culture",
         "about_interest_6": "Urban planning and architecture",
-        "about_interest_7": "Technology and innovation",
-        "contact_title": "Contact us",
-        "footer_text": "Looking to acquire a work, organize an exhibition, or for any other request",
-        "footer_cta": "contact us"
+        "about_interest_7": "Technology and innovation"
     }
 }

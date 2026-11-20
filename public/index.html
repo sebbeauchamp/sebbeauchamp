@@ -24,13 +24,13 @@
   <meta property="og:title" content="Sébastien Beauchamp">
   <meta property="og:locale" content="fr">
   <meta property="og:type" content="website">
-    <meta property="og:image" content="http://localhost:1313/images/andrejasmin.jpg">
+    <meta property="og:image" content="http://localhost:1313/images/sebastienbeauchamp.jpg">
  
 
   <meta itemprop="name" content="Sébastien Beauchamp">
   <meta itemprop="datePublished" content="2026-03-11T00:00:00+00:00">
   <meta itemprop="dateModified" content="2026-03-11T00:00:00+00:00">
-  <meta itemprop="image" content="http://localhost:1313/images/andrejasmin.jpg"> 
+  <meta itemprop="image" content="http://localhost:1313/images/sebastienbeauchamp.jpg"> 
 <link rel="alternate" type="application/rss+xml" href="/index.xml" title="Sébastien Beauchamp">
 
 <link rel="stylesheet" href="/tarteaucitron/css/tarteaucitron.css"><script>
@@ -61,7 +61,7 @@
       </a>
       <ul class="navbar-nav nav-cta nav-cta--mobile d-lg-none">
 <li class="nav-item">
-  <a class="nav-link nav-pill nav-pill--cta" href="/contact/">Contact</a>
+  <a class="nav-link nav-pill nav-pill--cta" data-copy-email="true" href="mailto:contact@sebastienbeauchamp.com">Contact</a>
 </li>
 </ul>
 
@@ -86,7 +86,7 @@
         <div class="nav-utils d-none d-lg-flex align-items-center ms-lg-auto">
           <ul class="navbar-nav nav-cta">
 <li class="nav-item">
-  <a class="nav-link nav-pill nav-pill--cta" href="/contact/">Contact</a>
+  <a class="nav-link nav-pill nav-pill--cta" data-copy-email="true" href="mailto:contact@sebastienbeauchamp.com">Contact</a>
 </li>
 </ul>
         </div>
@@ -97,7 +97,7 @@
 </span>
 
           <p class="nav-card__title">Parle-moi de tes projets, on les rendra concrêts.</p>
-          <a class="nav-pill nav-pill--cta" href="/contact/">Contacte-moi</a>
+          <a class="nav-pill nav-pill--cta" href="mailto:contact@sebastienbeauchamp.com" data-copy-email="true">Contacte-moi</a>
         </div>
       </div>
 
@@ -128,7 +128,7 @@
 <div class="home">
 <section class="container home-hero">
   <p class="home-hero__tagline">Comprendre, réfléchir, réaliser.</p>
-  <h1 class="home-hero__title">Designer depuis 2008, je conçois des identités et des expériences numériques.</h1>
+  <h1 class="home-hero__title">Depuis 2008, je suis designer d&#39;identités de marques et d&#39;expériences numériques.</h1>
 </section>
 
 <div class="container">
@@ -146,7 +146,7 @@
             <h2 class="h5 mb-2">
               <a class="text-black text-decoration-none stretched-link" href="/projects/beaulieu-foods/">Beaulieu</a>
             </h2>
-            <p class="text-muted lh-sm"><span class="text-black">Alimentation.</span> Une troisième génération d’associés, un nouveau branding s’est imposé pour marquer leur arrivée et rafraîchir l&#39;image.</p>
+            <p class="text-muted lh-sm"><span class="text-black">Alimentation B2B.</span> Rafraîchir l&#39;image de l&#39;entreprise suite au rachat par de nouveaux associés.</p>
             <div class="d-inline-flex mt-1">
               
               
@@ -177,7 +177,7 @@
             <h2 class="h5 mb-2">
               <a class="text-black text-decoration-none stretched-link" href="/projects/distillerie-de-montreal/">Distillerie de Montréal</a>
             </h2>
-            <p class="text-muted lh-sm"><span class="text-black">Spiriteux.</span> Installée dans le quartier Rosemont, en plein cœur de Montréal. Elle s’est dotée d’un nouveau site vitrine pour développer la marque localement et à l’international.</p>
+            <p class="text-muted lh-sm"><span class="text-black">Spiriteux.</span> Un site vitrine pour développer localement et à l’international la distillerie installée en plein cœur de Montréal.</p>
             <div class="d-inline-flex mt-1">
               
               
@@ -249,12 +249,12 @@
   </div>
 
   <div class="footer__grid">
-    <a class="footer__email" href="mailto:contact@sebastienbeauchamp.com">contact@sebastienbeauchamp.com <span aria-hidden="true">→</span></a>
+    <a class="footer__email" href="mailto:contact@sebastienbeauchamp.com" data-copy-email="true">contact@sebastienbeauchamp.com <span aria-hidden="true">→</span></a>
 
     <ul class="footer__links list-unstyled">
       <li><a href="/">Projets</a></li>
       <li><a href="/info/">Info</a></li>
-      <li><a href="/contact/">Contact</a></li>
+      <li><a href="mailto:contact@sebastienbeauchamp.com" data-copy-email="true">Contact</a></li>
     </ul>
     <ul class="footer__links list-unstyled">
       <li><a href="https://www.linkedin.com/in/sebbeauchamp/" target="_blank" rel="noopener">Linkedin</a></li>
@@ -264,7 +264,7 @@
     </ul>
 
     <ul class="footer__links list-unstyled">
-      <li><a href="mailto:contact@sebastienbeauchamp.com?subject=Infolettre">Infolettre</a></li>
+      <li><a href="https://sebbeauchamp.substack.com" target="_blank" rel="noopener" >Infolettre</a></li>
       <li><a href="#" onclick="tarteaucitron.userInterface.openPanel(); return false;">Cookies</a></li>
     </ul>
   </div>
@@ -274,7 +274,15 @@
 </div>
 
   </footer>
-  
+  <div class="contact-toast" role="status" aria-live="polite" data-contact-toast>
+  <span class="contact-toast__icon" aria-hidden="true">
+    <img class="contact-toast__mail" src="/images/icons/toast-mail.svg" width="24" height="24" alt="">
+    <img class="contact-toast__badge" src="/images/icons/toast-badge.svg" width="26" height="26" alt="">
+    <img class="contact-toast__check" src="/images/icons/toast-check.svg" width="8" height="6" alt="">
+  </span>
+  <span class="contact-toast__text">L’adresse email a été copiée</span>
+</div>
+
     <script src="/js/app.js" defer></script>
     <script src="/js/custom.js" defer></script><script src="/tarteaucitron/tarteaucitron.js"></script><script src="/tarteaucitron/tarteaucitron.services.js"></script>
     <script src="/js/tarteaucitron-config.js"></script>

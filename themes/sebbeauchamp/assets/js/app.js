@@ -65,3 +65,61 @@ window.bootstrap = bootstrap;
 
   update();
 })();
+
+// Contact links: copy the email address and show the toast instead of
+// opening the mail app. Links keep a mailto: href, so without JS (or if
+// copying fails) they still open the mail app.
+(function () {
+  const toast = document.querySelector('[data-contact-toast]');
+  if (!toast) return;
+
+  const text = toast.querySelector('.contact-toast__text');
+  const message = text.textContent;
+  const VISIBLE_MS = 2500;
+  let hideTimer;
+
+  function showToast() {
+    // Re-set the text so screen readers announce it on every click
+    text.textContent = '';
+    requestAnimationFrame(function () { text.textContent = message; });
+
+    toast.classList.add('is-visible');
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(function () {
+      toast.classList.remove('is-visible');
+    }, VISIBLE_MS);
+  }
+
+  function copy(value) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(value);
+    }
+    // Fallback for older browsers / non-HTTPS
+    return new Promise(function (resolve, reject) {
+      const field = document.createElement('textarea');
+      field.value = value;
+      field.setAttribute('readonly', '');
+      field.style.position = 'fixed';
+      field.style.opacity = '0';
+      document.body.appendChild(field);
+      field.select();
+      const ok = document.execCommand('copy');
+      field.remove();
+      ok ? resolve() : reject(new Error('copy failed'));
+    });
+  }
+
+  document.addEventListener('click', function (event) {
+    const link = event.target.closest('[data-copy-email]');
+    if (!link) return;
+
+    const href = link.getAttribute('href') || '';
+    const email = href.replace(/^mailto:/i, '').split('?')[0];
+    if (!email) return;
+
+    event.preventDefault();
+    copy(email).then(showToast, function () {
+      window.location.href = href; // couldn't copy: open the mail app instead
+    });
+  });
+})();

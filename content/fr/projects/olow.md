@@ -15,7 +15,7 @@ preview_description : Une marque française au regard libre, qui aime créer aux
 
 industry : 'Mode durable'
 
-intro : "Une marque française au regard libre, qui aime créer aux côtés d'artistes aux univers multiples. Pour mieux raconter son ADN, sa mission et son esthétique, voici la nouvelle plateforme e-commerce. Ce nouveau site transpire plus de maturité, à l'image de celle acquise par la marque avec les années. Il est aussi plus sobre, pour mieux laisser respirer les produits, qui évoluent et se réinventent à chaque collection."
+intro : Pour mieux raconter son ADN, sa mission et son esthétique, voici la nouvelle plateforme e-commerce. Ce nouveau site transpire plus de maturité, à l'image de celle acquise par la marque avec les années. Il est sobre et sympathique, pour mieux laisser respirer les produits, qui évoluent et se réinventent à chaque collection.
 
 link : 'https://olow.fr'
 

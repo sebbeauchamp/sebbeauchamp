@@ -4,9 +4,9 @@ date: '2026-03-11'
 title: 'Beaulieu'
 imagepreview : 'beaulieu-preview.jpg'
 
-industry : 'Alimentation'
+industry : 'Alimentation B2B'
 
-preview_description : Une troisième génération d’associés, un nouveau branding s’est imposé pour marquer leur arrivée et rafraîchir l'image.
+preview_description : Rafraîchir l'image de l'entreprise suite au rachat par de nouveaux associés.
 
 project_images :
 - 'beaulieu/beaulieu-logo-badge.jpg'
@@ -18,7 +18,7 @@ project_images :
 - 'beaulieu/beaulieu-accueil-mobile.jpg'
 
 
-intro : "Depuis 1960, Beaulieu est un acteur de l’industrie alimentaire au Québec. Suite au rachat par une troisième génération d’associés, un nouveau branding s’est imposé pour marquer leur arrivée et rafraîchir l'image."
+intro : "Depuis 1960, Beaulieu est un acteur de l’industrie alimentaire au Québec. Suite au rachat par une troisième génération d’associés, une nouvelle image de marque et un nouveau site web s’est imposé pour marquer leur arrivée."
 
 link : 'https://beaulieufoods.com'
 

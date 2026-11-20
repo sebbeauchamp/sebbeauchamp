@@ -16,9 +16,10 @@ _merge = "deep"
 rssFullContent = true
 homePagerSize = 5
 sectionPagerSize = 10
-images = [ "images/andrejasmin.jpg" ]
+images = [ "images/sebastienbeauchamp.jpg" ]
 available = true
 email = "contact@sebastienbeauchamp.com"
+newsletter_url = "https://sebbeauchamp.substack.com"
 
 [[params.social]]
 name = "Linkedin"
@@ -71,15 +72,16 @@ weight = 40
 
 [[languages.en.menus.main]]
 name = "Contact"
-pageRef = "/contact"
+url = "mailto:contact@sebastienbeauchamp.com"
 weight = 50
 [languages.en.menus.main.params]
 cta = true
+copy_email = true # click copies the address + shows the toast (app.js)
 
   [languages.en.params]
   dateFormat = "Jan 02, 2006"
-  author = "Jane Doe"
-  description = "André Jasmin (1922-2020) - Pioneer of abstract art and artistic modernity in Quebec. Discover the works and legacy of this renowned Montreal painter and draftsman."
+  author = "Sébastien Beauchamp"
+  description = "Independent designer of brand identities and digital experiences since 2008. I align with your goals by taking aesthetic, technical and strategic stakes into account."
 
 [languages.en.params.footer.copyright]
 yearStart = 2025
@@ -112,15 +114,16 @@ weight = 40
 
 [[languages.fr.menus.main]]
 name = "Contact"
-pageRef = "/contact"
+url = "mailto:contact@sebastienbeauchamp.com"
 weight = 50
 [languages.fr.menus.main.params]
 cta = true
+copy_email = true # click copies the address + shows the toast (app.js)
 
 [languages.fr.params.footer.copyright]
 yearStart = 2008
 author = "Sébastien Beauchamp"
 
 [languages.fr.params]
-description = "André Jasmin (1922-2020) - Pionnier de l'art abstrait et de la modernité artistique au Québec. Découvrez les œuvres et l'héritage de ce peintre et dessinateur montréalais renommé."
+description = "Designer d’identités de marques et d’expériences numériques depuis 2008. Je m’aligne sur vos objectifs en prenant en compte les enjeux esthétiques, techniques et stratégiques."
 

@@ -20,3 +20,4 @@ cookieSettings: Cookies # Footer link for tarteaucitron
 404Message: This page is no longer here… or perhaps it never existed.
 404HomeLinkMessage: Back to home
 moreProjects: Keep exploring other projects # Project page — suggested projects heading
+emailCopied: Email address copied # Toast after a Contact click copies the address
