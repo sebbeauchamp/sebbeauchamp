@@ -8,7 +8,7 @@ themeInfo: Conçu avec {{ .hugo }} et {{ .yue }}
 
 contactCta: Contacte-moi # Mobile menu contact card button
 availabilityStatus: Disponible # Header availability badge
-footerHeading: Parle-moi de tes projets, on les rendra concrêts. # Footer heading
+footerHeading: Parle-moi de tes projets, on les rendra concrets. # Footer heading
 newsletter: Infolettre # Footer link
 artworks_links: Voir toutes les œuvres # Artworks page
 cookieSettings: Cookies # Footer link for tarteaucitron
